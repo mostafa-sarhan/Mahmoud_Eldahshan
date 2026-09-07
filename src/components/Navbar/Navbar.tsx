@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-import DirectionToggle from '@/components/common/DirectionToggle'
 import { ROUTES } from '@/constants/routes'
 import { cn } from '@/utils/cn'
 
@@ -83,9 +82,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <DirectionToggle />
+
           <Link to={CONTACT_PATH} className={cn(ctaBaseClasses, 'h-10')}>
-            Let&apos;s Talk
+            WORK WITH US
           </Link>
         </div>
 
@@ -156,11 +155,11 @@ export default function Navbar() {
                 onClick={closeMenu}
                 className={cn(ctaBaseClasses, 'h-11 w-full')}
               >
-                Let&apos;s Talk
+                WORK WITH US
               </Link>
               <div className="flex items-center justify-between gap-4">
                 <span className="text-sm text-slate-500">Language</span>
-                <DirectionToggle />
+
               </div>
             </div>
           </nav>

@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom'
 
 import DirectionToggle from '@/components/common/DirectionToggle'
-import { APP_NAME } from '@/constants'
+import { APP_DESCRIPTION } from '@/constants'
 import { ROUTES } from '@/constants/routes'
 
 export default function AuthLayout() {
@@ -15,7 +15,7 @@ export default function AuthLayout() {
           to={ROUTES.home}
           className="mb-6 block text-center text-xl font-semibold text-slate-900"
         >
-          {APP_NAME}
+          {APP_DESCRIPTION}
         </Link>
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <Outlet />

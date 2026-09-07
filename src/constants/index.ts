@@ -1,1 +1,2 @@
-export const APP_NAME = 'EduSphere'
+export const Developer_NAME = 'Mostafa Sarhan'
+export const APP_DESCRIPTION = 'Mahmoud ElDahshan'
