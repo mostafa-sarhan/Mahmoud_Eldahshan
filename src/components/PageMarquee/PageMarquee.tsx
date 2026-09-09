@@ -27,9 +27,6 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
         <div className="flex shrink-0 items-center gap-12 pr-12">
           <MarqueeItem title={title} />
           <MarqueeItem title={title} />
-          <MarqueeItem title={title} />
-          <MarqueeItem title={title} />
-          <MarqueeItem title={title} />
         </div>
       </motion.div>
     </section>
@@ -38,7 +35,7 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
 function MarqueeItem({ title }: { title: string }) {
   return (
     <div className="flex shrink-0 items-center gap-12">
-      <h1 className="whitespace-nowrap text-[clamp(80px,13vw,180px)] font-semibold uppercase leading-none tracking-[-0.06em]">
+      <h1 className="whitespace-nowrap text-[clamp(80px,13vw,180px)] font-semibold leading-none tracking-[-0.06em]">
         {title}
       </h1>
       <CircularText />
@@ -73,7 +70,7 @@ function CircularText() {
         </defs>
         <text className="fill-current text-[14px] uppercase tracking-[2px]">
           <textPath href="#circular-text-path">
-            MAHMOUD ELDAHSHAN MAHMOUD ELDAHSHAN
+            MAHMOUD ELDAHSHAN  MAHMOUD ELDAHSHAN
           </textPath>
         </text>
       </svg>
