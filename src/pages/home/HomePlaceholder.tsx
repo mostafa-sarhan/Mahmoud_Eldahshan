@@ -11,17 +11,17 @@ export default function HomePlaceholder() {
             relative
             w-full
             border border-white/40
-            bg-white/95
+            bg-white/97
             px-8 py-10
             md:px-12 md:py-14
           "
         >
           <div className="text-center">
-            <p className=" text-xl font-medium uppercase tracking-[0.3em] text-black">
+            <p className=" text-sm font-medium uppercase tracking-[0.3em] text-black">
               Brand Strategist
             </p>
 
-            <h2 className="text-6xl font-semibold tracking-[-0.04em] text-black md:text-6xl">
+            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-black md:text-6xl">
               Mahmoud El-dahshan
             </h2>
 
