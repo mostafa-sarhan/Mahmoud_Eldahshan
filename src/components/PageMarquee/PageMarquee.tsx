@@ -10,7 +10,7 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
         className="flex w-max"
         animate={{ x: ["0%", "-50%"] }}
         transition={{
-          duration: 14,
+          duration: 12,
           ease: "linear",
           repeat: Infinity,
         }}
@@ -18,13 +18,13 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
         {/* First set */}
         <div className="flex shrink-0 items-center gap-12 pr-12">
           <MarqueeItem title={title} />
-          <MarqueeItem title={title} />
+
 
         </div>
         {/* Identical second set */}
         <div className="flex shrink-0 items-center gap-12 pr-12">
           <MarqueeItem title={title} />
-          <MarqueeItem title={title} />
+
         </div>
       </motion.div>
     </section>
