@@ -13,7 +13,7 @@ export default function AuthLayout() {
       <div className="w-full max-w-md">
         <Link
           to={ROUTES.home}
-          className="mb-6 block text-center text-xl font-semibold text-slate-900"
+          className="mb-6 block text-center text-xl font-semibold text-black"
         >
           {APP_DESCRIPTION}
         </Link>

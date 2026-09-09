@@ -13,7 +13,7 @@ export default function Input({ id, label, hint, error, className, ...props }: I
   return (
     <div className="flex w-full flex-col gap-1.5">
       {label && (
-        <label htmlFor={id} className="text-sm font-medium text-slate-700">
+        <label htmlFor={id} className="text-sm font-medium text-black">
           {label}
         </label>
       )}
@@ -22,7 +22,7 @@ export default function Input({ id, label, hint, error, className, ...props }: I
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
         className={cn(
-          'h-10 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-900',
+          'h-10 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-black',
           'placeholder:text-slate-400',
           'focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/30',
           'disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500',

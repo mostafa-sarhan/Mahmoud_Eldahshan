@@ -7,7 +7,7 @@ export default function ForbiddenPage() {
   return (
     <div className="flex min-h-[60dvh] flex-col items-center justify-center gap-4 px-4 text-center">
       <p className="text-6xl font-bold text-primary-600">403</p>
-      <h1 className="text-xl font-semibold text-slate-900">Forbidden</h1>
+      <h1 className="text-xl font-semibold text-black">Forbidden</h1>
       <p className="max-w-sm text-sm text-slate-500">
         You do not have permission to access this page.
       </p>

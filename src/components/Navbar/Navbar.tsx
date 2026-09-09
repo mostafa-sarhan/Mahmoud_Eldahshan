@@ -21,24 +21,24 @@ const NAV_ITEMS: NavItem[] = [
 const CONTACT_PATH = '/contact'
 
 const ctaBaseClasses =
-  'inline-flex items-center justify-center rounded-full bg-slate-900 px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2'
+  'inline-flex items-center justify-center rounded-full bg-black px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 focus-visible:ring-offset-2'
 
 const desktopLinkClasses = ({ isActive }: { isActive: boolean }) =>
   cn(
     'rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-200',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30',
     isActive
-      ? 'bg-slate-900/5 text-slate-900'
-      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
+      ? 'bg-black/5 text-black'
+      : 'text-slate-600 hover:bg-slate-100 hover:text-black',
   )
 
 const mobileLinkClasses = ({ isActive }: { isActive: boolean }) =>
   cn(
     'flex items-center rounded-lg px-4 py-2.5 text-base font-medium transition-colors duration-200',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30',
     isActive
-      ? 'bg-slate-100 text-slate-900'
-      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
+      ? 'bg-slate-100 text-black'
+      : 'text-slate-600 hover:bg-slate-100 hover:text-black',
   )
 
 export default function Navbar() {
@@ -64,7 +64,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           to={ROUTES.home}
-          className="rounded-md text-lg font-extrabold tracking-tight text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 sm:text-xl"
+          className="rounded-md text-lg font-extrabold tracking-tight text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 sm:text-xl"
         >
           ELDAHSHAN
         </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-black transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 md:hidden"
         >
           {isMenuOpen ? (
             <svg

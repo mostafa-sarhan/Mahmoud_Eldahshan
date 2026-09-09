@@ -7,6 +7,7 @@ import LoginPage from '@/pages/auth/Login'
 import ForbiddenPage from '@/pages/errors/Forbidden'
 import NotFoundPage from '@/pages/errors/NotFound'
 import HomePlaceholder from '@/pages/home/HomePlaceholder'
+import About from '@/pages/About/About'
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
       <Route element={<PublicLayout />}>
         <Route index element={<HomePlaceholder />} />
         <Route path={ROUTES.forbidden} element={<ForbiddenPage />} />
+        <Route path='about' element={<About />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
