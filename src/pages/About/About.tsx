@@ -1,7 +1,7 @@
-import PageMarquee from "@/components/PageMarquee/PageMarquee"
+import PageMarqueeTwo from "@/components/PageMarquee/PageMarqueeTwo"
 
 export default function About() {
   return (
-    <PageMarquee title="About" />
+    <PageMarqueeTwo title="About" />
   )
 }

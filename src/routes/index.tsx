@@ -8,6 +8,7 @@ import ForbiddenPage from '@/pages/errors/Forbidden'
 import NotFoundPage from '@/pages/errors/NotFound'
 import HomePlaceholder from '@/pages/home/HomePlaceholder'
 import About from '@/pages/About/About'
+import Contact from '@/pages/contact/Contact'
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ export default function AppRoutes() {
         <Route index element={<HomePlaceholder />} />
         <Route path={ROUTES.forbidden} element={<ForbiddenPage />} />
         <Route path='about' element={<About />} />
+        <Route path='contact' element={<Contact />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
