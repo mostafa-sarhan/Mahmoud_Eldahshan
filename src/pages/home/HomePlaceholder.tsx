@@ -22,7 +22,7 @@ export default function HomePlaceholder() {
             <h2 className="font-serif text-2xl font-medium tracking-[-0.04em] text-black md:text-6xl">
               Mahmoud El-dahshan
             </h2>
-            <p className=" text-sm font-medium uppercase  text-black">
+            <p className=" text-base font-medium text-black">
               Brand Strategist
             </p>
           </div>
