@@ -63,7 +63,7 @@ function CircularLogo() {
       </defs>
 
       <text
-        className="fill-black font-serif font-medium"
+        className="fill-black font-serif font-regular"
         fontSize="14"
         letterSpacing="0.5"
       >
