@@ -42,7 +42,7 @@ function CircularLogo() {
     <motion.svg
       viewBox="0 0 100 100"
       aria-hidden="true"
-      className="h-14 w-14 md:h-16 md:w-18"
+      className="h-12 w-12 md:h-16 md:w-16"
       // animate={{ rotate: 360 }}
       // transition={{
       //   duration: 10,
@@ -63,7 +63,7 @@ function CircularLogo() {
       </defs>
 
       <text
-        className="fill-black font-serif font-bold"
+        className="fill-black font-serif font-medium"
         fontSize="14"
         letterSpacing="0.5"
       >
