@@ -1,8 +1,10 @@
 import PageMarquee from "@/components/PageMarquee/PageMarquee"
+import Intro from "./intro"
 
 export default function HomePlaceholder() {
   return (
-    <main className="relative">
+    <>
+        <main className="relative">
       <PageMarquee title="Think Beyond The Brand" />
 
       <div className="pointer-events-none w-full absolute inset-0 flex items-center justify-center">
@@ -31,6 +33,11 @@ export default function HomePlaceholder() {
 
 
 
+
+
     </main>
+    <Intro/>
+    </>
+
   )
 }
