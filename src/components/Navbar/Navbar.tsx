@@ -43,12 +43,12 @@ function CircularLogo() {
       viewBox="0 0 100 100"
       aria-hidden="true"
       className="h-14 w-14 md:h-16 md:w-18"
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 10,
-        ease: 'linear',
-        repeat: Infinity,
-      }}
+      // animate={{ rotate: 360 }}
+      // transition={{
+      //   duration: 10,
+      //   ease: 'linear',
+      //   repeat: Infinity,
+      // }}
     >
       <defs>
         <path
@@ -64,16 +64,16 @@ function CircularLogo() {
 
       <text
         className="fill-black font-serif font-bold"
-        fontSize="12"
+        fontSize="14"
         letterSpacing="0.5"
       >
         <textPath
           href="#navbar-circle-path"
           startOffset="0%"
-          textLength="245"
+          textLength="250"
           lengthAdjust="spacingAndGlyphs"
         >
-          MAHMOUD ELDAHSHAN MAHMOUD ELDAHSHAN 
+          MAHMOUD ELDAHSHAN 
         </textPath>
       </text>
     </motion.svg>
@@ -240,7 +240,6 @@ export default function Navbar() {
         </span>
       </button>
       </div>
-
       {/* ================= MOBILE MENU ================= */}
       <div
         id="mobile-menu"
