@@ -1,3 +1,4 @@
+import image from "../../assets/images/person.jpeg"
 export default function Intro() {
   return (
     <section className="w-full bg-white px-6 py-8 md:px-10 md:py- lg:py-5">
@@ -9,6 +10,10 @@ export default function Intro() {
           right strategy can give brands the clarity and strength they need
           to compete in a fiercely competitive market.
         </p>
+      </div>
+      <div className="w-full py-5 h-full">
+        <img src={image} alt="" />
+
       </div>
     </section>
   )
