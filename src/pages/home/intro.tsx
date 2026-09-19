@@ -1,9 +1,12 @@
 import image from "../../assets/images/person.jpeg"
+
 export default function Intro() {
   return (
-    <section className="w-full bg-white px-6 py-8 md:px-10 md:py- lg:py-5">
+    <section className="w-full bg-white px-6 py-8 md:px-10 md:py-12 lg:px-16 lg:py-16">
+      
+      {/* Intro Text */}
       <div className="flex justify-center items-center">
-        <p className="text-start md:text-center font-regular max-w-[1100px]  text-xl leading-[1.15]  font-sans text-black md:text-4xl lg:text-5xl">
+        <p className="max-w-[1100px] text-start font-sans text-xl leading-[1.15] font-normal text-black md:text-center md:text-4xl lg:max-w-[1150px] lg:text-5xl xl:text-[56px]">
           I’m a Brand Strategist who believes that strong brands are not
           built on ideas alone, but on a clear strategic foundation. Through
           working across different brands and challenges, I’ve seen how the
@@ -11,10 +14,16 @@ export default function Intro() {
           to compete in a fiercely competitive market.
         </p>
       </div>
-      <div className="w-full py-5 h-full">
-        <img src={image} alt="" />
 
+      {/* Image */}
+      <div className="mt-8 flex w-full justify-center md:mt-12 lg:mt-16">
+        <img
+          className="h-auto w-full max-w-[1400px] object-cover"
+          src={image}
+          alt="Mahmoud Eldahshan"
+        />
       </div>
+
     </section>
   )
 }
