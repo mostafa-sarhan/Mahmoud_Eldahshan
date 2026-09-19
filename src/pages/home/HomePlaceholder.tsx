@@ -13,20 +13,17 @@ export default function HomePlaceholder() {
             border border-white/40
             bg-white/93
             px-8 py-10
-            md:px-12 md:py-14
+            md:px-12 md:py-20
           "
         >
           <div className="text-center">
-            <p className=" text-sm font-medium uppercase tracking-[0.3em] text-black">
-              Brand Strategist
-            </p>
+
 
             <h2 className="font-serif text-3xl font-medium tracking-[-0.04em] text-black md:text-6xl">
               Mahmoud El-dahshan
             </h2>
-
-            <p className="mt-1 text-base tracking-wide text-black md:text-lg">
-              Think Beyond The Brand
+            <p className=" text-sm font-medium uppercase tracking-[0.3em] text-black">
+              Brand Strategist
             </p>
           </div>
         </div>
