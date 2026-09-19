@@ -33,7 +33,7 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
 function MarqueeItem({ title }: { title: string }) {
   return (
     <div className="flex shrink-0 items-center gap-12">
-      <h1 className="whitespace-nowrap text-[clamp(80px,13vw,180px)] font-semibold leading-none tracking-normal">
+      <h1 className="whitespace-nowrap font-serif text-[clamp(80px,13vw,180px)] font-bold leading-none tracking-normal">
         {title}
       </h1>
       {/* <CircularText /> */}

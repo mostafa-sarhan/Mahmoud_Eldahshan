@@ -22,22 +22,22 @@ export default function Input({ id, label, hint, error, className, ...props }: I
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : hint ? `${id}-hint` : undefined}
         className={cn(
-          'h-10 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-black',
-          'placeholder:text-slate-400',
-          'focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/30',
-          'disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500',
-          error && 'border-red-600 focus:border-red-600 focus:ring-red-600/30',
+          'h-10 w-full rounded-lg border border-black/20 bg-white px-3 text-sm text-black',
+          'placeholder:text-black/40',
+          'focus:border-black focus:outline-none focus:ring-2 focus:ring-black/30',
+          'disabled:cursor-not-allowed disabled:bg-black/5 disabled:text-black/40',
+          error && 'border-black focus:border-black focus:ring-black/30',
           className,
         )}
         {...props}
       />
       {hint && !error && (
-        <p id={`${id}-hint`} className="text-xs text-slate-500">
+        <p id={`${id}-hint`} className="text-xs text-black/60">
           {hint}
         </p>
       )}
       {error && (
-        <p id={`${id}-error`} className="text-xs text-red-600">
+        <p id={`${id}-error`} className="text-xs text-black">
           {error}
         </p>
       )}

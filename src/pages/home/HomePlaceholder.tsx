@@ -21,7 +21,7 @@ export default function HomePlaceholder() {
               Brand Strategist
             </p>
 
-            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-black md:text-6xl">
+            <h2 className="font-serif text-3xl font-medium tracking-[-0.04em] text-black md:text-6xl">
               Mahmoud El-dahshan
             </h2>
 

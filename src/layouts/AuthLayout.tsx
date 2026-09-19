@@ -6,7 +6,7 @@ import { ROUTES } from '@/constants/routes'
 
 export default function AuthLayout() {
   return (
-    <div className="relative flex min-h-dvh items-center justify-center bg-slate-50 p-4">
+    <div className="relative flex min-h-dvh items-center justify-center bg-white p-4">
       <div className="absolute top-4 end-4">
         <DirectionToggle />
       </div>
@@ -17,7 +17,7 @@ export default function AuthLayout() {
         >
           {APP_DESCRIPTION}
         </Link>
-        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <div className="rounded-xl border border-black/10 bg-white p-6 shadow-sm sm:p-8">
           <Outlet />
         </div>
       </div>

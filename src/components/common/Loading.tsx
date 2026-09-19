@@ -14,9 +14,9 @@ export default function Loading({ label, className }: LoadingProps) {
     >
       <span
         aria-hidden="true"
-        className="size-8 animate-spin rounded-full border-2 border-slate-300 border-t-primary-600"
+        className="size-8 animate-spin rounded-full border-2 border-black/20 border-t-black"
       />
-      {label && <span className="text-sm text-slate-600">{label}</span>}
+      {label && <span className="text-sm text-black/60">{label}</span>}
     </div>
   )
 }

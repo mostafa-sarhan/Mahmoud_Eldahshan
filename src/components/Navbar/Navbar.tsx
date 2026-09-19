@@ -1,5 +1,7 @@
+
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { motion } from 'motion/react'
 
 import { ROUTES } from '@/constants/routes'
 import { cn } from '@/utils/cn'
@@ -20,26 +22,63 @@ const NAV_ITEMS: NavItem[] = [
 
 const CONTACT_PATH = '/contact'
 
-const ctaBaseClasses =
-  'inline-flex items-center justify-center rounded-full bg-black px-5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 focus-visible:ring-offset-2'
-
 const desktopLinkClasses = ({ isActive }: { isActive: boolean }) =>
   cn(
-    'rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-200',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30',
-    isActive
-      ? 'bg-black/5 text-black'
-      : 'text-slate-600 hover:bg-slate-100 hover:text-black',
+    'font-sans text-lg font-medium tracking-tight transition-colors duration-200',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black',
+    isActive ? 'text-black' : 'text-black/60 hover:text-black',
   )
 
 const mobileLinkClasses = ({ isActive }: { isActive: boolean }) =>
   cn(
-    'flex items-center rounded-lg px-4 py-2.5 text-base font-medium transition-colors duration-200',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30',
-    isActive
-      ? 'bg-slate-100 text-black'
-      : 'text-slate-600 hover:bg-slate-100 hover:text-black',
+    'flex items-center px-4 py-3 text-lg font-medium transition-colors duration-200',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black',
+    isActive ? 'text-black' : 'text-black/60 hover:text-black',
   )
+
+
+function CircularLogo() {
+  return (
+    <motion.svg
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+      className="h-14 w-14 md:h-16 md:w-18"
+      animate={{ rotate: 360 }}
+      transition={{
+        duration: 10,
+        ease: 'linear',
+        repeat: Infinity,
+      }}
+    >
+      <defs>
+        <path
+          id="navbar-circle-path"
+          d="
+            M 50,50
+            m -40,0
+            a 40,40 0 1,1 80,0
+            a 40,40 0 1,1 -80,0
+          "
+        />
+      </defs>
+
+      <text
+        className="fill-black font-serif font-bold"
+        fontSize="12"
+        letterSpacing="0.5"
+      >
+        <textPath
+          href="#navbar-circle-path"
+          startOffset="0%"
+          textLength="245"
+          lengthAdjust="spacingAndGlyphs"
+        >
+          MAHMOUD ELDAHSHAN MAHMOUD ELDAHSHAN 
+        </textPath>
+      </text>
+    </motion.svg>
+  )
+}
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,11 +87,16 @@ export default function Navbar() {
     if (!isMenuOpen) return
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setIsMenuOpen(false)
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
     }
 
     document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
   }, [isMenuOpen])
 
   function closeMenu() {
@@ -60,20 +104,52 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <header className="sticky border-b border-black/10 top-0 z-40 bg-white">
+      {/* ================= DESKTOP / HEADER ================= */}
+      <div className="relative mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between px-6 md:px-8 lg:px-10">
+
+        {/* ================= LOGO ================= */}
         <Link
           to={ROUTES.home}
-          className="rounded-md text-lg font-extrabold tracking-tight text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 sm:text-xl"
+          aria-label="Mahmoud Eldahshan — Home"
+          className="
+            relative
+            z-10
+            inline-flex
+            shrink-0
+            rounded-full
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-black
+          "
         >
-          ELDAHSHAN
+          <CircularLogo />
         </Link>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
-          <ul className="flex items-center gap-1">
+        {/* ================= DESKTOP NAVIGATION ================= */}
+        <nav
+          aria-label="Main navigation"
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            hidden
+            -translate-x-1/2
+            -translate-y-1/2
+            md:block
+          "
+        >
+          <ul className="flex items-center">
             {NAV_ITEMS.map((item) => (
               <li key={item.to}>
-                <NavLink to={item.to} end={item.end} className={desktopLinkClasses}>
+                <NavLink
+                  to={item.to}
+                  end={item.end}
+                  className={cn(
+                    desktopLinkClasses,
+                    'mx-5 lg:mx-7',
+                  )}
+                >
                   {item.label}
                 </NavLink>
               </li>
@@ -81,50 +157,93 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-
-          <Link to={CONTACT_PATH} className={cn(ctaBaseClasses, 'h-10')}>
+        {/* ================= CTA ================= */}
+        <div className="relative z-10 hidden md:block">
+          <Link
+            to={CONTACT_PATH}
+            className="
+              inline-flex
+              items-center
+              py-2
+              text-base
+              font-medium
+              text-black
+              transition-opacity
+              duration-200
+              hover:opacity-60
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-black
+            "
+          >
             WORK WITH US
           </Link>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setIsMenuOpen((open) => !open)}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-black transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 md:hidden"
-        >
-          {isMenuOpen ? (
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              aria-hidden="true"
-              className="size-5"
-            >
-              <path d="M5 5l14 14M19 5L5 19" />
-            </svg>
-          ) : (
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              aria-hidden="true"
-              className="size-5"
-            >
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        {/* ================= MOBILE MENU BUTTON ================= */}
+      <button
+        type="button"
+        onClick={() => setIsMenuOpen((open) => !open)}
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-menu"
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        className="
+          relative
+          z-10
+          inline-flex
+          h-8
+          w-8
+          items-center
+          justify-center
+          text-black
+          transition-opacity
+          duration-200
+          hover:opacity-60
+          focus-visible:outline-none
+          focus-visible:ring-2
+          focus-visible:ring-black
+          md:hidden
+        "
+      >
+        <span className="relative flex h-6 w-6 flex-col items-center justify-center">
+
+          {/* Top line */}
+          <span
+            className={cn(
+              'absolute block h-0.5 w-6 bg-black transition-all duration-300 ease-in-out',
+              isMenuOpen
+                ? 'rotate-45'
+                : '-translate-y-2',
+            )}
+          />
+
+          {/* Middle line */}
+          <span
+            className={cn(
+              'absolute block h-0.5 w-6 bg-black transition-all duration-300 ease-in-out',
+              isMenuOpen
+                ? 'scale-0 opacity-0'
+                : 'scale-100 opacity-100',
+            )}
+          />
+
+          {/* Bottom line */}
+          <span
+            className={cn(
+              'absolute block h-0.5 w-6 bg-black transition-all duration-300 ease-in-out',
+              isMenuOpen
+                ? '-rotate-45'
+                : 'translate-y-2',
+            )}
+          />
+
+        </span>
+      </button>
       </div>
 
+      {/* ================= MOBILE MENU ================= */}
       <div
+        id="mobile-menu"
         className={cn(
           'grid transition-[grid-template-rows] duration-300 ease-in-out md:hidden',
           isMenuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
@@ -133,9 +252,9 @@ export default function Navbar() {
         <div className="overflow-hidden">
           <nav
             aria-label="Mobile navigation"
-            className="border-t border-slate-200/80 bg-white/95 px-4 pb-5 pt-3 sm:px-6"
+            className="border-t border-black/10 bg-white px-6 pb-6 pt-4"
           >
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col">
               {NAV_ITEMS.map((item) => (
                 <li key={item.to}>
                   <NavLink
@@ -149,18 +268,23 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-col gap-4 border-t border-slate-100 pt-4">
+
+            <div className="mt-4 border-t border-black/10 pt-5">
               <Link
                 to={CONTACT_PATH}
                 onClick={closeMenu}
-                className={cn(ctaBaseClasses, 'h-11 w-full')}
+                className="
+                  inline-flex
+                  text-base
+                  font-medium
+                  text-black
+                  transition-opacity
+                  duration-200
+                  hover:opacity-60
+                "
               >
                 WORK WITH US
               </Link>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm text-slate-500">Language</span>
-
-              </div>
             </div>
           </nav>
         </div>
@@ -168,3 +292,4 @@ export default function Navbar() {
     </header>
   )
 }
+
