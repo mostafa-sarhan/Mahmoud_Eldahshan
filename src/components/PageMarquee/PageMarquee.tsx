@@ -5,7 +5,7 @@ interface PageMarqueeProps {
 }
 export default function PageMarquee({ title }: PageMarqueeProps) {
   return (
-    <section className="w-full overflow-hidden py-8">
+    <section className="w-full overflow-hidden py-4">
       <motion.div
         className="flex w-max"
         animate={{ x: ["0%", "-50%"] }}
@@ -24,7 +24,6 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
         {/* Identical second set */}
         <div className="flex shrink-0 items-center gap-12 pr-12">
           <MarqueeItem title={title} />
-
         </div>
       </motion.div>
     </section>
@@ -33,9 +32,10 @@ export default function PageMarquee({ title }: PageMarqueeProps) {
 function MarqueeItem({ title }: { title: string }) {
   return (
     <div className="flex shrink-0 items-center gap-12">
-      <h1 className="whitespace-nowrap font-serif text-[clamp(0px,13vw,180px)] font-bold leading-none tracking-normal">
+      <h1 className="whitespace-nowrap font-serif text-[clamp(80px,13vw,180px)] font-bold leading-none tracking-normal">
         {title}
       </h1>
+
     </div>
   )
 }

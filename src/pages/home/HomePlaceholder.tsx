@@ -19,10 +19,10 @@ export default function HomePlaceholder() {
           <div className="text-center">
 
 
-            <h2 className="font-serif text-3xl font-medium tracking-[-0.04em] text-black md:text-6xl">
+            <h2 className="font-serif text-2xl font-medium tracking-[-0.04em] text-black md:text-6xl">
               Mahmoud El-dahshan
             </h2>
-            <p className=" text-sm font-medium uppercase tracking-[0.3em] text-black">
+            <p className=" text-sm font-medium uppercase  text-black">
               Brand Strategist
             </p>
           </div>
