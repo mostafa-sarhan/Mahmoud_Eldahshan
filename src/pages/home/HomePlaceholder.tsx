@@ -30,6 +30,7 @@ export default function HomePlaceholder() {
       </div>
 
 
+
     </main>
   )
 }
