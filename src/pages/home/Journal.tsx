@@ -1,5 +1,4 @@
-import gif from "../../assets/video/imagegif.GIF"
-
+import gif from "../../assets/video/IMG_2579.GIF"
 export default function Journal() {
   return (
     <section className="w-full bg-white">
