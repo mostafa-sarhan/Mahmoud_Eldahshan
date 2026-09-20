@@ -3,6 +3,7 @@ import Intro from "./intro"
 import TrustedBy from "./TrustedBy"
 import Quets from "./Quets"
 import RecentWorks from "./RecentWorks"
+import Journal from "./Journal"
 
 export default function HomePlaceholder() {
   return (
@@ -43,6 +44,7 @@ export default function HomePlaceholder() {
     <TrustedBy/>
     <Quets/>
     <RecentWorks/>
+    <Journal/>
     </>
 
   )
