@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { motion } from 'motion/react'
+// import { motion } from 'motion/react'
 
 import { ROUTES } from '@/constants/routes'
 import { cn } from '@/utils/cn'
@@ -37,48 +37,48 @@ const mobileLinkClasses = ({ isActive }: { isActive: boolean }) =>
   )
 
 
-function CircularLogo() {
-  return (
-    <motion.svg
-      viewBox="0 0 100 100"
-      aria-hidden="true"
-      className="h-12 w-12 md:h-16 md:w-16"
-      // animate={{ rotate: 360 }}
-      // transition={{
-      //   duration: 10,
-      //   ease: 'linear',
-      //   repeat: Infinity,
-      // }}
-    >
-      <defs>
-        <path
-          id="navbar-circle-path"
-          d="
-            M 50,50
-            m -40,0
-            a 40,40 0 1,1 80,0
-            a 40,40 0 1,1 -80,0
-          "
-        />
-      </defs>
+// function CircularLogo() {
+//   return (
+//     <motion.svg
+//       viewBox="0 0 100 100"
+//       aria-hidden="true"
+//       className="h-12 w-12 md:h-16 md:w-16"
+//       // animate={{ rotate: 360 }}
+//       // transition={{
+//       //   duration: 10,
+//       //   ease: 'linear',
+//       //   repeat: Infinity,
+//       // }}
+//     >
+//       <defs>
+//         <path
+//           id="navbar-circle-path"
+//           d="
+//             M 50,50
+//             m -40,0
+//             a 40,40 0 1,1 80,0
+//             a 40,40 0 1,1 -80,0
+//           "
+//         />
+//       </defs>
 
-      <text
-        className="fill-black font-serif font-regular"
-        fontSize="14"
-        letterSpacing="0.5"
-      >
-        <textPath
-          href="#navbar-circle-path"
-          startOffset="0%"
-          textLength="250"
-          lengthAdjust="spacingAndGlyphs"
-        >
-          MAHMOUD ELDAHSHAN 
-        </textPath>
-      </text>
-    </motion.svg>
-  )
-}
+//       <text
+//         className="fill-black font-serif font-regular"
+//         fontSize="14"
+//         letterSpacing="0.5"
+//       >
+//         <textPath
+//           href="#navbar-circle-path"
+//           startOffset="0%"
+//           textLength="250"
+//           lengthAdjust="spacingAndGlyphs"
+//         >
+//           MAHMOUD ELDAHSHAN 
+//         </textPath>
+//       </text>
+//     </motion.svg>
+//   )
+// }
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -118,12 +118,19 @@ export default function Navbar() {
             inline-flex
             shrink-0
             rounded-full
+            font-serif
+            text-xl
+            md:text-2xl
+            font-bold
+            tracking-tight
+            text-black
             focus-visible:outline-none
             focus-visible:ring-2
             focus-visible:ring-black
           "
         >
-          <CircularLogo />
+          {/* <CircularLogo /> */}
+          Mahmoud El-dahshan
         </Link>
 
         {/* ================= DESKTOP NAVIGATION ================= */}
