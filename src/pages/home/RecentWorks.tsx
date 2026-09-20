@@ -29,7 +29,7 @@ export default function RecentWorks() {
             font-sans
             text-[52px]
             leading-[0.9]
-            tracking-[0.02em]
+
             text-black
             sm:text-[140px]
             md:text-[140px]
@@ -43,9 +43,9 @@ export default function RecentWorks() {
           className="
             max-w-full
             font-sans
-            text-[42px]
+            text-[52px]
             leading-[0.9]
-            tracking-[0.02em]
+
             text-black
             sm:text-[140px]
             md:text-[140px]
