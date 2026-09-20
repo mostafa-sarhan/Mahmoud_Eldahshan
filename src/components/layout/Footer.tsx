@@ -1,5 +1,6 @@
 import Container from '@/components/common/Container'
 import { Developer_NAME } from '@/constants'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,11 +13,6 @@ export default function Footer() {
     { label: 'Contact', href: '/contact' },
   ]
 
-  const socials = [
-    { label: 'Instagram', href: '#' },
-    { label: "Facebook", href: '#' },
-    { label: 'LinkedIn', href: '#' },
-  ]
 
   return (
     <footer className="w-full bg-black text-white">
@@ -126,20 +122,7 @@ export default function Footer() {
               {/* =========================
                   NAVIGATION
               ========================== */}
-              <div className="flex flex-col py-4">
-
-                <p
-                  className="
-                    mb-5
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    tracking-[0.2em]
-                    text-white/35
-                  "
-                >
-                  Navigation
-                </p>
+              <div className="flex flex-col py-3">
 
                 <nav className="flex flex-col items-start gap-3 lg:items-end">
 
@@ -166,50 +149,95 @@ export default function Footer() {
 
               </div>
 
-              {/* =========================
-                  SOCIAL
-              ========================== */}
-              <div className="flex flex-col">
+{/* =========================
+    SOCIAL
+========================= */}
+<div className="flex flex-col">
 
-                <p
-                  className="
-                    mb-5
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    tracking-[0.2em]
-                    text-white/35
-                  "
-                >
-                  Social
-                </p>
 
-                <div className="flex flex-col items-start gap-3 lg:items-end">
+  <div className="flex items-center gap-3">
 
-                  {socials.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        text-sm
-                        font-medium
-                        uppercase
-                        tracking-[0.08em]
-                        text-white
-                        transition-opacity
-                        duration-300
-                        hover:opacity-50
-                      "
-                    >
-                      {social.label}
-                    </a>
-                  ))}
+    {/* Instagram */}
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      className="
+        flex
+        h-11
+        w-11
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/30
+        text-white
+        transition-all
+        duration-300
+        hover:border-white
+        hover:bg-white
+        hover:text-black
+      "
+    >
+      <FaInstagram className="text-lg" />
+    </a>
 
-                </div>
+    {/* LinkedIn */}
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+      className="
+        flex
+        h-11
+        w-11
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/30
+        text-white
+        transition-all
+        duration-300
+        hover:border-white
+        hover:bg-white
+        hover:text-black
+      "
+    >
+      <FaLinkedinIn className="text-lg" />
+    </a>
 
-              </div>
+    {/* Facebook */}
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      className="
+        flex
+        h-11
+        w-11
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/30
+        text-white
+        transition-all
+        duration-300
+        hover:border-white
+        hover:bg-white
+        hover:text-black
+      "
+    >
+      <FaFacebookF className="text-lg" />
+    </a>
+
+  </div>
+
+</div>
 
             </div>
 
