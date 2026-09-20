@@ -43,6 +43,7 @@ export default function Intro() {
           onClick={scrollToRecentWorks}
           aria-label="Scroll to recent work"
           className="
+          cursor-pointer
             group
             absolute
             bottom-[15px]
@@ -72,9 +73,9 @@ export default function Intro() {
           <span
             className="
               animate-[arrow-down_1.8s_ease-in-out_infinite]
-              text-2xl
+              text-4xl
               leading-none
-              md:text-3xl
+              md:text-5xl
             "
           >
             ↓

@@ -5,7 +5,7 @@ interface PageMarqueeProps {
 }
 export default function PageMarquee({ title }: PageMarqueeProps) {
   return (
-    <section className="w-full overflow-hidden py-4">
+    <section className="w-full overflow-hidden py-6">
       <motion.div
         className="flex w-max"
         animate={{ x: ["0%", "-50%"] }}
