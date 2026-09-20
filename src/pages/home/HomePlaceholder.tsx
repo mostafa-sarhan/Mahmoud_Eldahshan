@@ -2,6 +2,7 @@ import PageMarquee from "@/components/PageMarquee/PageMarquee"
 import Intro from "./intro"
 import TrustedBy from "./TrustedBy"
 import Quets from "./Quets"
+import RecentWorks from "./RecentWorks"
 
 export default function HomePlaceholder() {
   return (
@@ -41,6 +42,7 @@ export default function HomePlaceholder() {
     <Intro/>
     <TrustedBy/>
     <Quets/>
+    <RecentWorks/>
     </>
 
   )

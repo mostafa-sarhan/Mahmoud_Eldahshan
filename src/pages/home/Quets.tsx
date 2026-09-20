@@ -1,7 +1,7 @@
 export default function Quets() {
   return (
     <section className="w-full bg-white px-5 py-10 md:px-10 md:py-16">
-      <div className="relative mx-auto flex w-full max-w-[1100px] justify-center">
+      <div className="relative  mx-auto flex w-full max-w-[1100px] justify-center">
         
         {/* Quote */}
         <span
@@ -13,7 +13,7 @@ export default function Quets() {
             font-serif
             text-[56px]
             leading-none
-            text-black
+            text-black/70
             md:-left-2
             md:-top-2
             md:text-8xl
@@ -32,7 +32,7 @@ export default function Quets() {
               text-[24px]
               leading-[1.15]
               tracking-tight
-              text-black
+              text-black/70
               sm:text-[28px]
               md:text-5xl
               lg:max-w-[1050px]
