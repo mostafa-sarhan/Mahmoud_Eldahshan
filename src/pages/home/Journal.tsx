@@ -1,13 +1,29 @@
 import gif from "../../assets/video/IMG_2579.GIF"
+
 export default function Journal() {
   return (
     <section className="w-full bg-white">
-
       <div className="grid w-full grid-cols-1 lg:grid-cols-2">
 
         {/* Black Box */}
-        <div className="flex min-h-[500px] flex-col items-center justify-center bg-black px-6 py-20 text-center text-white md:min-h-[600px] lg:min-h-[650px]">
-          
+        <div
+          className="
+            order-2
+            flex
+            min-h-[500px]
+            flex-col
+            items-center
+            justify-center
+            bg-black
+            px-6
+            py-20
+            text-center
+            text-white
+            md:min-h-[600px]
+            lg:order-1
+            lg:min-h-[650px]
+          "
+        >
           {/* Small Text */}
           <p className="font-sans text-sm font-medium uppercase tracking-[0.15em] text-white/70 md:text-base">
             celebrate your unique
@@ -20,7 +36,6 @@ export default function Journal() {
 
           {/* Button */}
           <a
-            // href="https://obscurioandco.myflodesk.com/service-guide"
             href="#"
             className="
               mt-10
@@ -43,11 +58,19 @@ export default function Journal() {
           >
             Download my Service Guide
           </a>
-
         </div>
 
         {/* GIF */}
-        <div className="min-h-[500px] overflow-hidden md:min-h-[600px] lg:min-h-[650px]">
+        <div
+          className="
+            order-1
+            min-h-[500px]
+            overflow-hidden
+            md:min-h-[600px]
+            lg:order-2
+            lg:min-h-[650px]
+          "
+        >
           <img
             src={gif}
             alt=""
@@ -56,7 +79,6 @@ export default function Journal() {
         </div>
 
       </div>
-
     </section>
   )
 }
