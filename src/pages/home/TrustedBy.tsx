@@ -28,7 +28,7 @@ export default function TrustedBy() {
 
       <div className="px-6 md:px-10">
         <p className="mb-10 font-sans text-xl uppercase md:text-2xl font-medium">
-          Trusted By
+          (Trusted By)
         </p>
       </div>
 
