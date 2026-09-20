@@ -13,12 +13,11 @@ export default function Footer() {
     { label: 'Contact', href: '/contact' },
   ]
 
-
   return (
     <footer className="w-full bg-black text-white">
 
       {/* Premium Top Line */}
-      <div className="h-[2px] w-full bg-white" />
+      <div className="h-[20px] w-full bg-white" />
 
       <Container className="px-6 md:px-10 lg:px-16">
 
@@ -269,12 +268,13 @@ export default function Footer() {
         >
 
           <p>
-            © {currentYear} Mahmoud Eldahshan
+            © {currentYear} Mahmoud El-dahshan
           </p>
 
-          <p>
-            Developed by {Developer_NAME}
-          </p>
+          <a href='https://mostafasarhan.tech/' target="_blank" rel="noopener noreferrer">
+            Developed by 
+            <span className='hover:text-white'>{Developer_NAME}</span>
+          </a>
 
           <p>
             All rights reserved
