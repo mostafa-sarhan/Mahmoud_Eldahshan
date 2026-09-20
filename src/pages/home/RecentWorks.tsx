@@ -28,8 +28,8 @@ export default function RecentWorks() {
             max-w-full
             font-sans
             text-[52px]
-            leading-[1.1]
-            tracking-[-0.05em]
+            leading-[0.9]
+            tracking-[0.02em]
             text-black
             sm:text-[140px]
             md:text-[140px]
@@ -44,8 +44,8 @@ export default function RecentWorks() {
             max-w-full
             font-sans
             text-[42px]
-            leading-[1.1]
-            tracking-[-0.05em]
+            leading-[0.9]
+            tracking-[0.02em]
             text-black
             sm:text-[140px]
             md:text-[140px]
@@ -68,7 +68,6 @@ export default function RecentWorks() {
       font-sans
       text-xl
       font-medium
-      uppercase
       tracking-wide
       text-black
       transition-opacity
