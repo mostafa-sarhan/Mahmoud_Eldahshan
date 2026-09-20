@@ -1,6 +1,7 @@
 import PageMarquee from "@/components/PageMarquee/PageMarquee"
 import Intro from "./intro"
 import TrustedBy from "./TrustedBy"
+import Quets from "./Quets"
 
 export default function HomePlaceholder() {
   return (
@@ -39,6 +40,7 @@ export default function HomePlaceholder() {
     </main>
     <Intro/>
     <TrustedBy/>
+    <Quets/>
     </>
 
   )
