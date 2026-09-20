@@ -1,11 +1,29 @@
 import Container from '@/components/common/Container'
-import { APP_DESCRIPTION, Developer_NAME } from '@/constants'
+import { Developer_NAME } from '@/constants'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const navigation = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Skills', href: '/skills' },
+    { label: 'Contact', href: '/contact' },
+  ]
+
+  const socials = [
+    { label: 'Instagram', href: '#' },
+    { label: 'LinkedIn', href: '#' },
+    { label: 'Behance', href: '#' },
+    { label: 'Dribbble', href: '#' },
+  ]
+
   return (
     <footer className="w-full bg-black text-white">
+
+      {/* Premium Top Line */}
+      <div className="h-[2px] w-full bg-white" />
 
       <Container className="px-6 md:px-10 lg:px-16">
 
@@ -16,11 +34,21 @@ export default function Footer() {
           <div className="flex flex-col justify-between">
 
             <div>
-              <p className="mb-6 font-sans text-xs font-medium uppercase tracking-[0.2em] text-white/50">
-                {APP_DESCRIPTION}
-              </p>
 
-              <h2 className="max-w-[850px] font-serif text-[64px] leading-[0.85] tracking-[-0.05em] sm:text-[85px] md:text-[110px] lg:text-[120px] xl:text-[145px]">
+
+              <h2
+                className="
+                  max-w-[850px]
+                  font-serif
+                  text-[62px]
+                  leading-[0.82]
+                  tracking-[-0.055em]
+                  sm:text-[82px]
+                  md:text-[105px]
+                  lg:text-[115px]
+                  xl:text-[140px]
+                "
+              >
                 Let’s build
                 <br />
                 something
@@ -34,27 +62,37 @@ export default function Footer() {
           {/* Right */}
           <div className="flex flex-col justify-between lg:items-end">
 
-            <div className="w-full max-w-[420px] lg:text-right">
+            <div className="w-full max-w-[430px] lg:text-right">
 
-              <p className="font-sans text-lg leading-[1.3] text-white/60 md:text-xl">
+              <p
+                className="
+                  font-sans
+                  text-lg
+                  font-normal
+                  leading-[1.35]
+                  tracking-[-0.02em]
+                  text-white/60
+                  md:text-xl
+                "
+              >
                 Strategy, clarity and ideas that help ambitious brands
                 become impossible to ignore.
               </p>
 
               {/* CTA */}
               <a
-                href="mailto:"
+                href="/contact"
                 className="
-                  mt-8
+                  mt-9
                   inline-flex
                   border-b
                   border-white
                   pb-2
                   font-sans
-                  text-lg
+                  text-sm
                   font-medium
                   uppercase
-                  tracking-wide
+                  tracking-[0.12em]
                   text-white
                   transition-opacity
                   duration-300
@@ -66,43 +104,111 @@ export default function Footer() {
 
             </div>
 
-            {/* Navigation */}
-            <nav className="mt-16 flex w-full flex-col gap-4 font-sans text-sm uppercase tracking-wide lg:mt-0 lg:w-auto lg:items-end">
-              <a
-                href="#"
-                className="transition-opacity duration-300 hover:opacity-50"
-              >
-                Home
-              </a>
+            {/* Navigation + Social */}
+            <div
+              className="
+                mt-16
+                grid
+                w-full
+                grid-cols-2
+                gap-12
+                font-sans
+                lg:mt-0
+                lg:w-auto
+                lg:grid-cols-2
+                lg:gap-x-20
+                lg:text-right
+              "
+            >
 
-              <a
-                href="#recent-works"
-                className="transition-opacity duration-300 hover:opacity-50"
-              >
-                Recent Work
-              </a>
+              {/* Navigation */}
+              <div>
+                <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-white/35">
+                  Navigation
+                </p>
 
-              <a
-                href="#"
-                className="transition-opacity duration-300 hover:opacity-50"
-              >
-                About
-              </a>
+                <nav className="flex flex-col gap-3">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="
+                        w-fit
+                        text-sm
+                        font-medium
+                        uppercase
+                        tracking-[0.08em]
+                        text-white
+                        transition-opacity
+                        duration-300
+                        hover:opacity-50
+                        lg:ml-auto
+                      "
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
 
-              <a
-                href="#"
-                className="transition-opacity duration-300 hover:opacity-50"
-              >
-                Contact
-              </a>
-            </nav>
+              {/* Social */}
+              <div>
+                <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-white/35">
+                  Social
+                </p>
+
+                <div className="flex flex-col gap-3">
+                  {socials.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        w-fit
+                        text-sm
+                        font-medium
+                        uppercase
+                        tracking-[0.08em]
+                        text-white
+                        transition-opacity
+                        duration-300
+                        hover:opacity-50
+                        lg:ml-auto
+                      "
+                    >
+                      {social.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col gap-5 border-t border-white/15 py-6 font-sans text-xs uppercase tracking-wide text-white/40 md:flex-row md:items-center md:justify-between">
+        <div
+          className="
+            flex
+            flex-col
+            gap-5
+            border-t
+            border-white/15
+            py-6
+            font-sans
+            text-[10px]
+            font-medium
+            uppercase
+            tracking-[0.12em]
+            text-white/35
+            md:flex-row
+            md:items-center
+            md:justify-between
+          "
+        >
 
           <p>
             © {currentYear} Mahmoud Eldahshan
