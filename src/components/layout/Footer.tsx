@@ -14,9 +14,8 @@ export default function Footer() {
 
   const socials = [
     { label: 'Instagram', href: '#' },
+    { label: "Facebook", href: '#' },
     { label: 'LinkedIn', href: '#' },
-    { label: 'Behance', href: '#' },
-    { label: 'Dribbble', href: '#' },
   ]
 
   return (
@@ -30,38 +29,39 @@ export default function Footer() {
         {/* Main Footer */}
         <div className="grid gap-16 py-20 md:py-24 lg:grid-cols-2 lg:gap-20 lg:py-28">
 
-          {/* Left */}
+          {/* =========================
+              LEFT
+          ========================== */}
           <div className="flex flex-col justify-between">
 
-            <div>
-
-
-              <h2
-                className="
-                  max-w-[850px]
-                  font-serif
-                  text-[62px]
-                  leading-[0.82]
-                  tracking-[-0.055em]
-                  sm:text-[82px]
-                  md:text-[105px]
-                  lg:text-[115px]
-                  xl:text-[140px]
-                "
-              >
-                Let’s build
-                <br />
-                something
-                <br />
-                meaningful.
-              </h2>
-            </div>
+            <h2
+              className="
+                max-w-[850px]
+                font-serif
+                text-[62px]
+                leading-[0.82]
+                tracking-[-0.055em]
+                sm:text-[82px]
+                md:text-[105px]
+                lg:text-[115px]
+                xl:text-[140px]
+              "
+            >
+              Let’s build
+              <br />
+              something
+              <br />
+              meaningful.
+            </h2>
 
           </div>
 
-          {/* Right */}
+          {/* =========================
+              RIGHT
+          ========================== */}
           <div className="flex flex-col justify-between lg:items-end">
 
+            {/* Description + CTA */}
             <div className="w-full max-w-[430px] lg:text-right">
 
               <p
@@ -104,36 +104,50 @@ export default function Footer() {
 
             </div>
 
-            {/* Navigation + Social */}
+            {/* =========================
+                NAVIGATION + SOCIAL
+                ALWAYS VERTICAL
+            ========================== */}
             <div
               className="
                 mt-16
-                grid
+                flex
                 w-full
-                grid-cols-2
+                flex-col
                 gap-12
                 font-sans
                 lg:mt-0
                 lg:w-auto
-                lg:grid-cols-2
-                lg:gap-x-20
+                lg:items-end
                 lg:text-right
               "
             >
 
-              {/* Navigation */}
-              <div>
-                <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-white/35">
+              {/* =========================
+                  NAVIGATION
+              ========================== */}
+              <div className="flex flex-col py-4">
+
+                <p
+                  className="
+                    mb-5
+                    text-[10px]
+                    font-medium
+                    uppercase
+                    tracking-[0.2em]
+                    text-white/35
+                  "
+                >
                   Navigation
                 </p>
 
-                <nav className="flex flex-col gap-3">
+                <nav className="flex flex-col items-start gap-3 lg:items-end">
+
                   {navigation.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
                       className="
-                        w-fit
                         text-sm
                         font-medium
                         uppercase
@@ -142,22 +156,36 @@ export default function Footer() {
                         transition-opacity
                         duration-300
                         hover:opacity-50
-                        lg:ml-auto
                       "
                     >
                       {item.label}
                     </a>
                   ))}
+
                 </nav>
+
               </div>
 
-              {/* Social */}
-              <div>
-                <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-white/35">
+              {/* =========================
+                  SOCIAL
+              ========================== */}
+              <div className="flex flex-col">
+
+                <p
+                  className="
+                    mb-5
+                    text-[10px]
+                    font-medium
+                    uppercase
+                    tracking-[0.2em]
+                    text-white/35
+                  "
+                >
                   Social
                 </p>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col items-start gap-3 lg:items-end">
+
                   {socials.map((social) => (
                     <a
                       key={social.label}
@@ -165,7 +193,6 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="
-                        w-fit
                         text-sm
                         font-medium
                         uppercase
@@ -174,13 +201,14 @@ export default function Footer() {
                         transition-opacity
                         duration-300
                         hover:opacity-50
-                        lg:ml-auto
                       "
                     >
                       {social.label}
                     </a>
                   ))}
+
                 </div>
+
               </div>
 
             </div>
@@ -189,7 +217,9 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
+        {/* =========================
+            BOTTOM
+        ========================== */}
         <div
           className="
             flex
