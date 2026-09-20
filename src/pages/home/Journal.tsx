@@ -15,7 +15,7 @@ export default function Journal() {
           </p>
 
           {/* Main Heading */}
-          <h2 className="mt-4 max-w-[700px] font-serif text-[52px] leading-[0.9] tracking-[-0.04em] sm:text-[70px] md:text-[90px] lg:text-[80px] xl:text-[100px]">
+          <h2 className="mt-4 max-w-[700px] font-sans text-[45px] leading-[0.9] tracking-[-0.04em] sm:text-[70px] md:text-[90px] lg:text-[80px] xl:text-[100px]">
             Want the full low down?
           </h2>
 
