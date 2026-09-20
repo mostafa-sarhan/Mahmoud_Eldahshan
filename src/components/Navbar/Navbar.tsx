@@ -118,10 +118,10 @@ export default function Navbar() {
             inline-flex
             shrink-0
             rounded-full
-            font-serif
+            font-sans
             text-xl
             md:text-2xl
-            font-bold
+            font-medium
             tracking-tight
             text-black
             focus-visible:outline-none
