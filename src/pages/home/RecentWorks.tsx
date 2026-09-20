@@ -18,7 +18,7 @@ const projects = [
 
 export default function RecentWorks() {
   return (
-    <section className="w-full bg-white py-16 md:py-24 lg:py-32">
+    <section className="w-full bg-white py-16 md:py-24 lg:py-32"  id="recent-works">
 
       {/* Header */}
       <div className="px-6 md:px-10 lg:px-16">
