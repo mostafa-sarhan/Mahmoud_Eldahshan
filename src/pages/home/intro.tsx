@@ -1,12 +1,12 @@
 import image from "../../assets/images/person.jpeg"
 
 export default function Intro() {
-  const scrollToRecentWorks = () => {
-    document.getElementById("recent-works")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
-  }
+const scrollToFooter = () => {
+  document.getElementById("footer")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  })
+}
 
   return (
     <section className="w-full bg-white px-6 py-10 md:px-10 md:py-14 lg:px-16 lg:py-16">
@@ -40,7 +40,7 @@ export default function Intro() {
         {/* Scroll Button */}
         <button
           type="button"
-          onClick={scrollToRecentWorks}
+          onClick={scrollToFooter}
           aria-label="Scroll to recent work"
           className="
           cursor-pointer
