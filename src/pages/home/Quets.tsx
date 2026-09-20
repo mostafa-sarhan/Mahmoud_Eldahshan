@@ -1,16 +1,45 @@
 export default function Quets() {
   return (
-    <section className="w-full bg-white px-6 py-20 md:px-10 md:py-28 lg:px-16 lg:py-32">
-      <div className="mx-auto flex max-w-[1200px] justify-center">
+    <section className="w-full bg-white px-5 py-10 md:px-10 md:py-16">
+      <div className="relative mx-auto flex w-full max-w-[1100px] justify-center">
         
-        <blockquote className="text-center">
-          <p className="font-serif text-3xl leading-[1.1]  text-black md:text-5xl lg:text-6xl xl:text-7xl">
-            <span
-              aria-hidden="true"
-              className=" align-top font-serif text-5xl leading-none md:mr-3 md:text-9xl"
-            >
-              “
-            </span>
+        {/* Quote */}
+        <span
+          aria-hidden="true"
+          className="
+            absolute
+            left-3
+            top-[-10px]
+            font-serif
+            text-[56px]
+            leading-none
+            text-black
+            md:-left-2
+            md:-top-2
+            md:text-8xl
+          "
+        >
+          “
+        </span>
+
+        {/* Text */}
+        <blockquote className="w-full text-center">
+          <p
+            className="
+              mx-auto
+              max-w-[900px]
+              font-serif
+              text-[24px]
+              leading-[1.15]
+              tracking-tight
+              text-black
+              sm:text-[28px]
+              md:text-5xl
+              lg:max-w-[1050px]
+              lg:text-[58px]
+              xl:text-[62px]
+            "
+          >
             Before building any brand, I always ask one important question:
             Why is it being built at all?
           </p>
