@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="w-full bg-black text-white"  id="footer">
 
       {/* Premium Top Line */}
-      <div className="h-[20px] w-full bg-white" />
+      <div className="h-[200px] w-full bg-white" />
 
       <Container className="px-6 md:px-10 lg:px-16">
 
