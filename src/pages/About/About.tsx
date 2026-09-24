@@ -99,7 +99,7 @@ export default function About() {
                 text-lg
                 leading-[1.4]
                 tracking-[-0.02em]
-                text-black/60
+
                 sm:mt-8
                 sm:text-xl
                 md:text-2xl
@@ -139,95 +139,51 @@ export default function About() {
         </div>
       </section>
 
-      {/* =========================
-          HOW I THINK
-      ========================= */}
+{/* =========================
+    HOW I THINK
+========================= */}
 
-      <section
+<section className="w-full px-5 py-12 sm:px-6 sm:py-16 md:px-10 md:py-18 lg:px-16 lg:py-22">
+  <div className="mx-auto max-w-[1500px]">
+    <div className="max-w-[1100px]">
+      <p
         className="
-          w-full
-          border-t
-          border-black/10
-          px-5
-          py-16
-          sm:px-6
-          sm:py-20
-          md:px-10
-          md:py-28
-          lg:px-16
-          lg:py-36
+          font-sans
+          text-[35px]
+          leading-[1.15]
+          tracking-[-0.025em]
+          sm:text-[30px]
+          md:text-[38px]
+          lg:text-[58px]
         "
       >
-        <div
-          className="
-            mx-auto
-            grid
-            max-w-[1500px]
-            grid-cols-1
-            gap-10
-            md:gap-14
-            lg:grid-cols-[0.7fr_1.3fr]
-            lg:gap-20
-          "
-        >
-          {/* Label */}
-          <div>
-            <p
-              className="
-                font-sans
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[0.2em]
-                text-black/40
-                sm:text-xs
-              "
-            >
-              (How I Think)
-            </p>
-          </div>
+        Today I work at the intersection of brand thinking, business
+        understanding, market analysis, and creative direction, with
+        experience across Egypt, Saudi Arabia, the UAE, and other markets
+        in the region.
+      </p>
 
-          {/* Content */}
-          <div className="max-w-[950px]">
-            <p
-              className="
-                font-sans
-                text-[25px]
-                leading-[1.15]
-                tracking-[-0.025em]
-                sm:text-[30px]
-                md:text-[38px]
-                lg:text-[48px]
-              "
-            >
-              Today I work at the intersection of brand thinking, business
-              understanding, market analysis, and creative direction, with
-              experience across Egypt, Saudi Arabia, the UAE, and other markets
-              in the region.
-            </p>
-
-            <p
-              className="
-                mt-8
-                max-w-[850px]
-                font-sans
-                text-lg
-                leading-[1.4]
-                tracking-[-0.02em]
-                text-black/60
-                sm:mt-10
-                sm:text-xl
-                md:text-2xl
-              "
-            >
-              My path is a little different — I studied Electrical Power and
-              Machines Engineering. That analytical foundation now shapes how
-              I work: understanding systems, identifying problems, and looking
-              for structured solutions rather than isolated fixes.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p
+        className="
+          mt-7
+          max-w-[900px]
+          font-sans
+          text-lg
+          leading-[1.4]
+          tracking-[-0.02em]
+          sm:mt-8
+          sm:text-xl
+          md:text-2xl
+        "
+      >
+        My path is a little different — I studied Electrical Power and
+        Machines Engineering. That analytical foundation now shapes how
+        I work: understanding systems, identifying problems, and looking
+        for structured solutions rather than isolated fixes.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* =========================
           CLOSING STATEMENT
@@ -237,7 +193,7 @@ export default function About() {
         className="
           w-full
           px-5
-          py-16
+          py-8
           sm:px-6
           sm:py-20
           md:px-10
