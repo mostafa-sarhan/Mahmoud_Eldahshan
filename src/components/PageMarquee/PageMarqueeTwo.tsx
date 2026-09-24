@@ -65,7 +65,7 @@ function SpinningImage() {
         lg:h-[88px] lg:w-[88px]
         xl:h-30 xl:w-30
       "
-      animate={{ rotate: 360 }}
+      animate={{ rotate: -360 }}
       transition={{
         duration: 10,
         ease: 'linear',
