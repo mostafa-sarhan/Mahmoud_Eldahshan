@@ -474,7 +474,14 @@ export default function About() {
           SECTION CLOSING
       ========================= */}
 
-      <section className="w-full px-5 py-2 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:px-16 lg:py-18">
+      <section className="w-full px-5
+          py-12
+          sm:px-6
+          sm:py-20
+          md:px-10
+          md:py-28
+          lg:px-16
+          lg:py-36">
         <div className="mx-auto max-w-[1500px]">
           <div className="max-w-[1100px]">
             <p
@@ -496,13 +503,14 @@ export default function About() {
 
             <p
               className="
+                mt-8
                 max-w-[900px]
                 font-sans
                 text-lg
                 leading-[1.4]
                 tracking-[-0.02em]
                 text-black/60
-                sm:mt-8
+                sm:mt-10
                 sm:text-xl
                 md:text-2xl
               "
@@ -520,6 +528,7 @@ export default function About() {
         <div
           className="
             mx-auto
+            pt-12
             flex
             max-w-[1500px]
             flex-col
