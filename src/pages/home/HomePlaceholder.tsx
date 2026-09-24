@@ -22,16 +22,6 @@ export default function HomePlaceholder() {
             md:px-12 md:py-20
           "
         >
-          {/* <div className="text-center">
-
-
-            <h2 className="font-serif text-3xl pt-6 font-medium tracking-[-0.04em] text-black md:text-6xl">
-              Mahmoud El-dahshan
-            </h2>
-            <p className=" text-base font-medium tracking-[0.1em]  md:tracking-[0.3em] text-black">
-              Brand Strategist
-            </p>
-          </div> */}
         </div>
       </div>
 

@@ -261,15 +261,7 @@ export default function About() {
           {/* Label */}
           <div>
             <p
-              className="
-                font-sans
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[0.2em]
-                text-black/40
-                sm:text-xs
-              "
+              className="mb-10 font-sans text-xl uppercase md:text-2xl font-medium" 
             >
               (My Approach)
             </p>
@@ -390,15 +382,7 @@ export default function About() {
           {/* Label */}
           <div>
             <p
-              className="
-                font-sans
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[0.2em]
-                text-black/40
-                sm:text-xs
-              "
+              className="mb-10 font-sans text-xl uppercase md:text-2xl font-medium"
             >
               (Behind the Strategy)
             </p>
