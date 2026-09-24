@@ -479,6 +479,7 @@ export default function About() {
           <div className="max-w-[1100px]">
             <p
               className="
+              pt-8
                 font-sans
                 text-[25px]
                 leading-[1.15]
