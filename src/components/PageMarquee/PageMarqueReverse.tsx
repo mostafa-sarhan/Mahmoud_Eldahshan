@@ -1,19 +1,21 @@
-import { motion } from "motion/react"
-import spinningImage from "@/assets/images/spinning.png"
+import { motion } from 'motion/react'
+import spinningImage from '@/assets/images/spinning.png'
 
 interface PageMarqueeProps {
   title: string
 }
 
-export default function PageMarqueeTwo({ title }: PageMarqueeProps) {
+export default function PageMarqueReverse({
+  title,
+}: PageMarqueeProps) {
   return (
-    <section className="w-full overflow-hidden py-4">
+    <section className="w-full overflow-hidden py-2">
       <motion.div
         className="flex w-max"
-        animate={{ x: ["0%", "-50%"] }}
+        animate={{ x: ['-50%', '0%'] }}
         transition={{
           duration: 12,
-          ease: "linear",
+          ease: 'linear',
           repeat: Infinity,
         }}
       >
@@ -58,10 +60,10 @@ function SpinningImage() {
   return (
     <motion.div
       className="h-30 w-30 shrink-0"
-      animate={{ rotate: -360 }}
+      animate={{ rotate: 360 }}
       transition={{
         duration: 10,
-        ease: "linear",
+        ease: 'linear',
         repeat: Infinity,
       }}
     >
