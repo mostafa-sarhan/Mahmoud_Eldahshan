@@ -4,7 +4,6 @@ import {
   FaInstagram,
   FaFacebookF,
   FaLinkedinIn,
-  FaXTwitter,
 } from 'react-icons/fa6'
 
 export default function Contact() {
@@ -107,18 +106,7 @@ export default function Contact() {
       "
     >
       <div>
-        <p
-          className="
-            font-sans
-            text-[10px]
-            font-medium
-            uppercase
-            tracking-[0.2em]
-            text-black/40
-          "
-        >
-          Start a conversation
-        </p>
+
 
         <h2
           className="
@@ -138,22 +126,7 @@ export default function Contact() {
         </h2>
       </div>
 
-      <span
-        className="
-          hidden
-          h-10
-          w-10
-          shrink-0
-          items-center
-          justify-center
-          rounded-full
-          border
-          border-black/15
-          sm:flex
-        "
-      >
-        <FiArrowUpRight className="text-base" />
-      </span>
+
     </div>
 
     <div className="mt-10 md:mt-12">
@@ -288,18 +261,7 @@ export default function Contact() {
       "
     >
       <div>
-        <p
-          className="
-            font-sans
-            text-[10px]
-            font-medium
-            uppercase
-            tracking-[0.2em]
-            text-black/40
-          "
-        >
-          Contact Details
-        </p>
+
 
         <h2
           className="
@@ -318,23 +280,6 @@ export default function Contact() {
           a conversation.
         </h2>
       </div>
-
-      <span
-        className="
-          hidden
-          h-10
-          w-10
-          shrink-0
-          items-center
-          justify-center
-          rounded-full
-          border
-          border-black/15
-          sm:flex
-        "
-      >
-        <FiArrowUpRight className="text-base" />
-      </span>
     </div>
 
     <div className="mt-10">
@@ -573,27 +518,6 @@ export default function Contact() {
           <FaLinkedinIn className="text-sm" />
         </a>
 
-        <a
-          href="#"
-          aria-label="X"
-          className="
-            flex
-            h-9
-            w-9
-            items-center
-            justify-center
-            rounded-full
-            border
-            border-black/20
-            text-black
-            transition-all
-            duration-300
-            hover:bg-black
-            hover:text-white
-          "
-        >
-          <FaXTwitter className="text-sm" />
-        </a>
       </div>
     </div>
   </div>
