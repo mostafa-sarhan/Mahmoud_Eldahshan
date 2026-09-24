@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-// import { motion } from 'motion/react'
 
 import { ROUTES } from '@/constants/routes'
 import { cn } from '@/utils/cn'
@@ -15,8 +14,8 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', to: ROUTES.home, end: true },
   { label: 'About', to: '/about' },
+  { label: 'Services', to: '/services' },
   { label: 'Projects', to: '/projects' },
-  { label: 'Skills', to: '/skills' },
   { label: 'Contact', to: '/contact' },
 ]
 
