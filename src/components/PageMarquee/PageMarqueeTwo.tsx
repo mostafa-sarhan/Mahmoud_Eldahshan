@@ -18,14 +18,14 @@ export default function PageMarqueeTwo({ title }: PageMarqueeProps) {
         }}
       >
         {/* First set */}
-        <div className="flex shrink-0 items-center gap-12 pr-12">
+        <div className="flex shrink-0 items-center gap-10 pr-12">
           <MarqueeItem title={title} />
           <MarqueeItem title={title} />
           <MarqueeItem title={title} />
         </div>
 
         {/* Identical second set */}
-        <div className="flex shrink-0 items-center gap-12 pr-12">
+        <div className="flex shrink-0 items-center gap-10 pr-12">
           <MarqueeItem title={title} />
         </div>
       </motion.div>

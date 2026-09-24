@@ -469,8 +469,8 @@ export default function About() {
           </div>
         </div>
       </section>
-      <PageMarqueReverse title="STRATEGY" />
-      <PageMarqueeTwo title="STRATEGY" />
+      <PageMarqueReverse title="Journey" />
+      <PageMarqueeTwo title="Journey" />
     </main>
   )
 }
