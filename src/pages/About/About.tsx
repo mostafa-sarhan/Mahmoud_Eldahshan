@@ -99,7 +99,7 @@ export default function About() {
                 text-lg
                 leading-[1.4]
                 tracking-[-0.02em]
-
+                text-black/50
                 sm:mt-8
                 sm:text-xl
                 md:text-2xl
@@ -143,18 +143,20 @@ export default function About() {
     HOW I THINK
 ========================= */}
 
-<section className="w-full px-5 py-12 sm:px-6 sm:py-16 md:px-10 md:py-18 lg:px-16 lg:py-22">
+<section className="w-full px-5 py-2 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:px-16 lg:py-18">
   <div className="mx-auto max-w-[1500px]">
     <div className="max-w-[1100px]">
       <p
         className="
+          max-w-[900px]
           font-sans
-          text-[35px]
-          leading-[1.15]
-          tracking-[-0.025em]
-          sm:text-[30px]
-          md:text-[38px]
-          lg:text-[58px]
+          text-lg
+          leading-[1.4]
+          tracking-[-0.02em]
+          text-black/60
+          sm:mt-8
+          sm:text-xl
+          md:text-2xl
         "
       >
         Today I work at the intersection of brand thinking, business
@@ -165,12 +167,12 @@ export default function About() {
 
       <p
         className="
-          mt-7
           max-w-[900px]
           font-sans
           text-lg
           leading-[1.4]
           tracking-[-0.02em]
+          text-black/60
           sm:mt-8
           sm:text-xl
           md:text-2xl
