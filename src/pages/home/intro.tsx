@@ -1,4 +1,4 @@
-import image from "../../assets/images/person.jpeg"
+import image from "../../assets/images/person.png"
 
 export default function Intro() {
 const scrollToFooter = () => {

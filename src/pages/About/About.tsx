@@ -86,10 +86,11 @@ export default function About() {
                 lg:text-[38px]
               "
             >
-              I’m Mahmoud El-Dahshan, a Brand Strategist with diverse experience in the field.
-               I began my career as a designer before gradually transitioning into a role deeply focused on strategy,
-                expanding my perspective from designing brand identities to understanding the thinking,
-                 principles, and strategy behind them.
+              I’m Mahmoud El-Dahshan, a Brand Strategist with diverse
+              experience in the field. I began my career as a designer before
+              gradually transitioning into a role deeply focused on strategy,
+              expanding my perspective from designing brand identities to
+              understanding the thinking, principles, and strategy behind them.
             </p>
 
             <p
@@ -115,78 +116,78 @@ export default function About() {
           </div>
 
           {/* Image */}
-<div
-  className="
-    w-full
-    max-w-[700px]
-    overflow-hidden
-    rounded-xl
-    md:mx-auto
-    lg:mx-0
-    lg:ml-auto
-  "
->
-  <img
-    src={MahmoudImage}
-    alt="Mahmoud El-Dahshan"
-    className="
-      block
-      h-auto
-      w-full
-      object-contain
-    "
-  />
-</div>
+          <div
+            className="
+              w-full
+              max-w-[700px]
+              overflow-hidden
+              rounded-xl
+              md:mx-auto
+              lg:mx-0
+              lg:ml-auto
+            "
+          >
+            <img
+              src={MahmoudImage}
+              alt="Mahmoud El-Dahshan"
+              className="
+                block
+                h-auto
+                w-full
+                object-contain
+              "
+            />
+          </div>
         </div>
       </section>
 
-{/* =========================
-    HOW I THINK
-========================= */}
+      {/* =========================
+          HOW I THINK
+      ========================= */}
 
-<section className="w-full px-5 py-2 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:px-16 lg:py-18">
-  <div className="mx-auto max-w-[1500px]">
-    <div className="max-w-[1100px]">
-      <p
-        className="
-          max-w-[900px]
-          font-sans
-          text-lg
-          leading-[1.4]
-          tracking-[-0.02em]
-          text-black/60
-          sm:mt-8
-          sm:text-xl
-          md:text-2xl
-        "
-      >
-        Today I work at the intersection of brand thinking, business
-        understanding, market analysis, and creative direction, with
-        experience across Egypt, Saudi Arabia, the UAE, and other markets
-        in the region.
-      </p>
+      <section className="w-full px-5 py-2 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:px-16 lg:py-18">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="max-w-[1100px]">
+            <p
+              className="
+                max-w-[900px]
+                font-sans
+                text-lg
+                leading-[1.4]
+                tracking-[-0.02em]
+                text-black/60
+                sm:mt-8
+                sm:text-xl
+                md:text-2xl
+              "
+            >
+              Today I work at the intersection of brand thinking, business
+              understanding, market analysis, and creative direction, with
+              experience across Egypt, Saudi Arabia, the UAE, and other markets
+              in the region.
+            </p>
 
-      <p
-        className="
-          max-w-[900px]
-          font-sans
-          text-lg
-          leading-[1.4]
-          tracking-[-0.02em]
-          text-black/60
-          sm:mt-8
-          sm:text-xl
-          md:text-2xl
-        "
-      >
-        My path is a little different — I studied Electrical Power and
-        Machines Engineering. That analytical foundation now shapes how
-        I work: understanding systems, identifying problems, and looking
-        for structured solutions rather than isolated fixes.
-      </p>
-    </div>
-  </div>
-</section>
+            <p
+              className="
+                max-w-[900px]
+                font-sans
+                text-lg
+                leading-[1.4]
+                tracking-[-0.02em]
+                text-black/60
+                sm:mt-8
+                sm:text-xl
+                md:text-2xl
+              "
+            >
+              My path is a little different — I studied Electrical Power and
+              Machines Engineering. That analytical foundation now shapes how
+              I work: understanding systems, identifying problems, and looking
+              for structured solutions rather than isolated fixes.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* =========================
           CLOSING STATEMENT
@@ -261,9 +262,7 @@ export default function About() {
         >
           {/* Label */}
           <div>
-            <p
-              className="mb-10 font-sans text-xl uppercase md:text-2xl font-medium" 
-            >
+            <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
               (My Approach)
             </p>
           </div>
@@ -382,9 +381,7 @@ export default function About() {
         >
           {/* Label */}
           <div>
-            <p
-              className="mb-10 font-sans text-xl uppercase md:text-2xl font-medium"
-            >
+            <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
               (Behind the Strategy)
             </p>
           </div>
@@ -469,8 +466,128 @@ export default function About() {
           </div>
         </div>
       </section>
+
       <PageMarqueReverse title="Journey" />
       <PageMarqueeTwo title="Journey" />
+
+      {/* =========================
+          SECTION CLOSING
+      ========================= */}
+
+      <section className="w-full px-5 py-2 sm:px-6 sm:py-10 md:px-10 md:py-14 lg:px-16 lg:py-18">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="max-w-[1100px]">
+            <p
+              className="
+                font-sans
+                text-[25px]
+                leading-[1.15]
+                tracking-[-0.025em]
+                sm:text-[30px]
+                md:text-[38px]
+                lg:text-[48px]
+              "
+            >
+              My background sits between disciplines — design, strategy, and
+              analytical thinking — and I keep learning, because brands can't
+              stay relevant by standing still.
+            </p>
+
+            <p
+              className="
+                max-w-[900px]
+                font-sans
+                text-lg
+                leading-[1.4]
+                tracking-[-0.02em]
+                text-black/60
+                sm:mt-8
+                sm:text-xl
+                md:text-2xl
+              "
+            >
+              What's stayed constant is this: I don't want to build brands
+              around ideas that only look good on the surface. I want to
+              understand what makes a brand matter and what it needs to become
+              stronger — because building a brand is really about building a
+              foundation strong enough to support what comes after it.
+            </p>
+          </div>
+        </div>
+
+        {/* Final Statement + CTA */}
+        <div
+          className="
+            mx-auto
+            flex
+            max-w-[1500px]
+            flex-col
+            gap-8
+            pt-6
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+            lg:gap-12
+          "
+        >
+          <p
+            className="
+              max-w-[1200px]
+              font-serif
+              text-[50px]
+              leading-[0.92]
+              tracking-[-0.045em]
+              sm:text-[62px]
+              md:text-[70px]
+              lg:text-[96px]
+              xl:text-[120px]
+            "
+          >
+            That is where my work begins.
+          </p>
+
+          <a
+            href="/contact"
+            className="
+              group
+              inline-flex
+              shrink-0
+              items-center
+              gap-3
+              self-start
+              border-b
+              border-black
+              pb-2
+              font-sans
+              text-lg
+              font-medium
+              tracking-[-0.02em]
+              text-black
+              transition-all
+              duration-300
+              hover:gap-5
+              lg:mb-2
+              lg:self-auto
+              sm:text-xl
+              md:text-2xl
+            "
+          >
+            <span>Get in Touch</span>
+
+            <span
+              aria-hidden="true"
+              className="
+                inline-block
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            >
+              →
+            </span>
+          </a>
+        </div>
+      </section>
     </main>
   )
 }
