@@ -59,18 +59,11 @@ function MarqueeItem({ title }: { title: string }) {
 function SpinningImage() {
   return (
     <motion.div
-      className="
-        h-6 w-6
-        shrink-0
-        sm:h-12 sm:w-12
-        md:h-[72px] md:w-[72px]
-        lg:h-[88px] lg:w-[88px]
-        xl:h-28 xl:w-28
-      "
-      animate={{ rotate: 360 }}
+      className="h-30 w-30 shrink-0"
+      animate={{ rotate: -360 }}
       transition={{
         duration: 10,
-        ease: 'linear',
+        ease: "linear",
         repeat: Infinity,
       }}
     >
