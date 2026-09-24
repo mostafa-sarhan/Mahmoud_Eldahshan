@@ -8,44 +8,37 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa6'
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
-
-type SendStatus = 'idle' | 'sending' | 'success' | 'error'
-
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null)
-  const [status, setStatus] = useState<SendStatus>('idle')
+  const [isSending, setIsSending] = useState(false)
+  const [status, setStatus] = useState('')
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    if (!formRef.current || status === 'sending') return
+    if (!formRef.current) return
 
-    setStatus('sending')
-
-    const formData = new FormData(formRef.current)
+    setIsSending(true)
+    setStatus('')
 
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
         {
-          from_name: formData.get('name'),
-          from_email: formData.get('email'),
-          message: formData.get('message'),
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         },
-        { publicKey: PUBLIC_KEY },
       )
 
+      setStatus('Your message has been sent successfully.')
       formRef.current.reset()
-      setStatus('success')
-    } catch {
-      setStatus('error')
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setStatus('Something went wrong. Please try again.')
+    } finally {
+      setIsSending(false)
     }
-
-    window.setTimeout(() => setStatus('idle'), 4000)
   }
 
   return (
@@ -123,7 +116,7 @@ export default function Contact() {
   {/* ================= FORM CARD ================= */}
   <form
     ref={formRef}
-    onSubmit={handleSubmit}
+    onSubmit={sendEmail}
     className="
       order-1
       rounded-[6px]
@@ -176,7 +169,7 @@ export default function Contact() {
       <div className="border-b border-black/15">
         <input
           id="name"
-          name="name"
+          name="from_name"
           type="text"
           placeholder="Your name"
           className="
@@ -198,7 +191,7 @@ export default function Contact() {
       <div className="border-b border-black/15">
         <input
           id="email"
-          name="email"
+          name="from_email"
           type="email"
           placeholder="Your email address"
           className="
@@ -243,7 +236,7 @@ export default function Contact() {
 
       <button
         type="submit"
-        disabled={status === 'sending'}
+        disabled={isSending}
         className="
           group
           mt-10
@@ -264,15 +257,7 @@ export default function Contact() {
           sm:text-lg
         "
       >
-        <span>
-          {status === 'sending'
-            ? 'Sending...'
-            : status === 'success'
-              ? 'Message Sent'
-              : status === 'error'
-                ? 'Failed - Try Again'
-                : 'Send Message'}
-        </span>
+        <span>{isSending ? 'Sending...' : 'Send Message'}</span>
 
         <FiArrowUpRight
           className="
@@ -284,6 +269,10 @@ export default function Contact() {
           "
         />
       </button>
+
+      {status && (
+        <p className="mt-5 font-sans text-sm text-black/50">{status}</p>
+      )}
     </div>
   </form>
 
