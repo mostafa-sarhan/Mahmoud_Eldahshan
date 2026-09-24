@@ -73,10 +73,10 @@ export default function Contact() {
     mt-20
     grid
     grid-cols-1
-    gap-5
+    gap-8
     md:mt-28
     lg:grid-cols-[1.35fr_0.65fr]
-    lg:gap-5
+    lg:gap-8
   "
 >
   {/* ================= FORM CARD ================= */}
@@ -430,8 +430,9 @@ export default function Contact() {
             sm:text-lg
           "
         >
-          Egypt
+          Cairo, Egypt
         </p>
+
       </div>
     </div>
 
