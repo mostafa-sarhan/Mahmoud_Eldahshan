@@ -86,9 +86,10 @@ export default function About() {
                 lg:text-[38px]
               "
             >
-              I'm Mahmoud El-Dahshan, a Brand Strategist with more than six
-              years of experience in branding, having started as a designer
-              before moving into a more strategic role.
+              I’m Mahmoud El-Dahshan, a Brand Strategist with diverse experience in the field.
+               I began my career as a designer before gradually transitioning into a role deeply focused on strategy,
+                expanding my perspective from designing brand identities to understanding the thinking,
+                 principles, and strategy behind them.
             </p>
 
             <p
