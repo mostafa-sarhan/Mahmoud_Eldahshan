@@ -1,3 +1,5 @@
+import { useRef, useState, type FormEvent } from 'react'
+import emailjs from '@emailjs/browser'
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
 import { FiMail, FiPhone, FiMapPin, FiArrowUpRight } from 'react-icons/fi'
 import {
@@ -6,7 +8,46 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa6'
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+
+type SendStatus = 'idle' | 'sending' | 'success' | 'error'
+
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null)
+  const [status, setStatus] = useState<SendStatus>('idle')
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    if (!formRef.current || status === 'sending') return
+
+    setStatus('sending')
+
+    const formData = new FormData(formRef.current)
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.get('name'),
+          from_email: formData.get('email'),
+          message: formData.get('message'),
+        },
+        { publicKey: PUBLIC_KEY },
+      )
+
+      formRef.current.reset()
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
+
+    window.setTimeout(() => setStatus('idle'), 4000)
+  }
+
   return (
     <main className="w-full overflow-hidden bg-white text-black">
       <PageMarqueeTwo title="CONTACT" />
@@ -81,6 +122,8 @@ export default function Contact() {
 >
   {/* ================= FORM CARD ================= */}
   <form
+    ref={formRef}
+    onSubmit={handleSubmit}
     className="
       order-1
       rounded-[6px]
@@ -200,6 +243,7 @@ export default function Contact() {
 
       <button
         type="submit"
+        disabled={status === 'sending'}
         className="
           group
           mt-10
@@ -216,10 +260,19 @@ export default function Contact() {
           transition-all
           duration-300
           hover:gap-6
+          disabled:cursor-not-allowed
           sm:text-lg
         "
       >
-        <span>Send Message</span>
+        <span>
+          {status === 'sending'
+            ? 'Sending...'
+            : status === 'success'
+              ? 'Message Sent'
+              : status === 'error'
+                ? 'Failed - Try Again'
+                : 'Send Message'}
+        </span>
 
         <FiArrowUpRight
           className="
