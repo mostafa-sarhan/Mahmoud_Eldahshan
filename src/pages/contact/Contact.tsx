@@ -10,10 +10,8 @@ import {
 export default function Contact() {
   return (
     <main className="w-full overflow-hidden bg-white text-black">
-      {/* Page Marquee */}
       <PageMarqueeTwo title="CONTACT" />
 
-      {/* Contact Section */}
       <section
         className="
           w-full
@@ -28,17 +26,17 @@ export default function Contact() {
         "
       >
         <div className="mx-auto max-w-[1500px]">
-          {/* Intro */}
-          <div className="max-w-[1000px]">
+          {/* ================= INTRO ================= */}
+          <div className="max-w-[1100px]">
             <h1
               className="
                 font-serif
                 text-[52px]
-                leading-[0.88]
-                tracking-[-0.05em]
-                sm:text-[70px]
+                leading-[0.86]
+                tracking-[-0.055em]
+                sm:text-[72px]
                 md:text-[100px]
-                lg:text-[130px]
+                lg:text-[135px]
                 xl:text-[155px]
               "
             >
@@ -57,375 +55,549 @@ export default function Contact() {
                 text-lg
                 leading-[1.4]
                 tracking-[-0.02em]
-                text-black/55
+                text-black/50
                 sm:mt-10
                 sm:text-xl
                 md:text-2xl
               "
             >
-              Have a project, an idea, or simply a question? Tell me what
-              you’re working on and let’s start a conversation.
+              Have a project, an idea, or simply a question?
+              <br className="hidden sm:block" />
+              Tell me what you’re working on and let’s start a conversation.
             </p>
           </div>
 
-          {/* Contact Content */}
-          <div
+{/* ================= CONTACT AREA ================= */}
+{/* ================= CONTACT AREA ================= */}
+<div
+  className="
+    mt-20
+    grid
+    grid-cols-1
+    gap-5
+    md:mt-28
+    lg:grid-cols-[1.35fr_0.65fr]
+    lg:gap-5
+  "
+>
+  {/* ================= FORM CARD ================= */}
+  <form
+    className="
+      order-1
+      rounded-[6px]
+      border
+      border-black/15
+      bg-white
+      p-7
+      sm:p-10
+      md:p-12
+      lg:p-14
+      xl:p-16
+    "
+  >
+    <div
+      className="
+        flex
+        items-start
+        justify-between
+        border-b
+        border-black/10
+        pb-8
+        md:pb-10
+      "
+    >
+      <div>
+        <p
+          className="
+            font-sans
+            text-[10px]
+            font-medium
+            uppercase
+            tracking-[0.2em]
+            text-black/40
+          "
+        >
+          Start a conversation
+        </p>
+
+        <h2
+          className="
+            mt-5
+            font-serif
+            text-[42px]
+            leading-[0.88]
+            tracking-[-0.045em]
+            sm:text-[52px]
+            md:text-[64px]
+            lg:text-[70px]
+          "
+        >
+          Tell me about
+          <br />
+          your project.
+        </h2>
+      </div>
+
+      <span
+        className="
+          hidden
+          h-10
+          w-10
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-black/15
+          sm:flex
+        "
+      >
+        <FiArrowUpRight className="text-base" />
+      </span>
+    </div>
+
+    <div className="mt-10 md:mt-12">
+      <div className="border-b border-black/15">
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Your name"
+          className="
+            w-full
+            border-0
+            bg-transparent
+            px-0
+            py-5
+            font-sans
+            text-base
+            text-black
+            outline-none
+            placeholder:text-black/35
+            sm:text-lg
+          "
+        />
+      </div>
+
+      <div className="border-b border-black/15">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Your email address"
+          className="
+            w-full
+            border-0
+            bg-transparent
+            px-0
+            py-5
+            font-sans
+            text-base
+            text-black
+            outline-none
+            placeholder:text-black/35
+            sm:text-lg
+          "
+        />
+      </div>
+
+      <div className="border-b border-black/15">
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          placeholder="Tell me about your project..."
+          className="
+            w-full
+            resize-none
+            border-0
+            bg-transparent
+            px-0
+            py-5
+            font-sans
+            text-base
+            leading-[1.5]
+            text-black
+            outline-none
+            placeholder:text-black/35
+            sm:text-lg
+          "
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="
+          group
+          mt-10
+          inline-flex
+          items-center
+          gap-4
+          border-b
+          border-black
+          pb-2
+          font-sans
+          text-base
+          font-medium
+          tracking-[-0.02em]
+          transition-all
+          duration-300
+          hover:gap-6
+          sm:text-lg
+        "
+      >
+        <span>Send Message</span>
+
+        <FiArrowUpRight
+          className="
+            text-lg
+            transition-transform
+            duration-300
+            group-hover:translate-x-1
+            group-hover:-translate-y-1
+          "
+        />
+      </button>
+    </div>
+  </form>
+
+  {/* ================= CONTACT DETAILS CARD ================= */}
+  <div
+    className="
+      order-2
+      rounded-[6px]
+      border
+      border-black/15
+      bg-white
+      p-7
+      sm:p-10
+      md:p-12
+      lg:p-14
+      xl:p-16
+    "
+  >
+    <div
+      className="
+        flex
+        items-start
+        justify-between
+        border-b
+        border-black/10
+        pb-8
+        md:pb-10
+      "
+    >
+      <div>
+        <p
+          className="
+            font-sans
+            text-[10px]
+            font-medium
+            uppercase
+            tracking-[0.2em]
+            text-black/40
+          "
+        >
+          Contact Details
+        </p>
+
+        <h2
+          className="
+            mt-5
+            max-w-[400px]
+            font-serif
+            text-[42px]
+            leading-[0.88]
+            tracking-[-0.045em]
+            sm:text-[52px]
+            md:text-[60px]
+          "
+        >
+          Let’s start
+          <br />
+          a conversation.
+        </h2>
+      </div>
+
+      <span
+        className="
+          hidden
+          h-10
+          w-10
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-black/15
+          sm:flex
+        "
+      >
+        <FiArrowUpRight className="text-base" />
+      </span>
+    </div>
+
+    <div className="mt-10">
+      {/* Email */}
+      <a
+        href="mailto:mahmoudeldahshann@gmail.com"
+        className="
+          group
+          block
+          border-b
+          border-black/10
+          py-6
+          transition-opacity
+          duration-300
+          hover:opacity-60
+        "
+      >
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <div className="mb-3 flex items-center gap-3">
+              <FiMail className="text-base text-black/50" />
+
+              <span
+                className="
+                  font-sans
+                  text-[10px]
+                  font-medium
+                  uppercase
+                  tracking-[0.18em]
+                  text-black/40
+                "
+              >
+                Email
+              </span>
+            </div>
+
+            <span
+              className="
+                block
+                break-all
+                font-sans
+                text-sm
+                tracking-[-0.015em]
+                sm:text-base
+              "
+            >
+              mahmoudeldahshann@gmail.com
+            </span>
+          </div>
+
+          <FiArrowUpRight
             className="
-              mt-20
-              grid
-              grid-cols-1
-              gap-16
-              border-t
-              border-black/15
-              pt-12
-              md:mt-28
-              md:pt-16
-              lg:grid-cols-[1.2fr_0.8fr]
-              lg:gap-24
+              shrink-0
+              text-lg
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+              group-hover:-translate-y-1
+            "
+          />
+        </div>
+      </a>
+
+      {/* Phone */}
+      <a
+        href="tel:+201011967626"
+        className="
+          group
+          block
+          border-b
+          border-black/10
+          py-6
+          transition-opacity
+          duration-300
+          hover:opacity-60
+        "
+      >
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <div className="mb-3 flex items-center gap-3">
+              <FiPhone className="text-base text-black/50" />
+
+              <span
+                className="
+                  font-sans
+                  text-[10px]
+                  font-medium
+                  uppercase
+                  tracking-[0.18em]
+                  text-black/40
+                "
+              >
+                Phone
+              </span>
+            </div>
+
+            <span
+              className="
+                block
+                font-sans
+                text-base
+                tracking-[-0.015em]
+                sm:text-lg
+              "
+            >
+              +20 1011 96 7626
+            </span>
+          </div>
+
+          <FiArrowUpRight
+            className="
+              shrink-0
+              text-lg
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+              group-hover:-translate-y-1
+            "
+          />
+        </div>
+      </a>
+
+      {/* Location */}
+      <div className="border-b border-black/10 py-6">
+        <div className="flex items-center gap-3">
+          <FiMapPin className="text-base text-black/50" />
+
+          <span
+            className="
+              font-sans
+              text-[10px]
+              font-medium
+              uppercase
+              tracking-[0.18em]
+              text-black/40
             "
           >
-            {/* ================= FORM ================= */}
-            <form className="order-1">
-              <div className="mb-10">
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.18em] text-black/45">
-                  Send a message
-                </p>
+            Location
+          </span>
+        </div>
 
-                <h2
-                  className="
-                    mt-4
-                    font-serif
-                    text-[42px]
-                    leading-[0.9]
-                    tracking-[-0.04em]
-                    sm:text-[52px]
-                    md:text-[64px]
-                  "
-                >
-                  Tell me about
-                  <br />
-                  your project.
-                </h2>
-              </div>
+        <p
+          className="
+            mt-3
+            font-sans
+            text-base
+            tracking-[-0.015em]
+            sm:text-lg
+          "
+        >
+          Egypt
+        </p>
+      </div>
+    </div>
 
-              <div className="space-y-10">
-                {/* Name */}
-                <div className="border-b border-black/20">
-                  <label
-                    htmlFor="name"
-                    className="
-                      mb-3
-                      block
-                      font-sans
-                      text-xs
-                      font-medium
-                      uppercase
-                      tracking-[0.12em]
-                      text-black/45
-                    "
-                  >
-                    Your Name
-                  </label>
+    {/* Social */}
+    <div className="pt-8">
+      <p
+        className="
+          mb-5
+          font-sans
+          text-[10px]
+          font-medium
+          uppercase
+          tracking-[0.2em]
+          text-black/40
+        "
+      >
+        Follow
+      </p>
 
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Your full name"
-                    className="
-                      w-full
-                      bg-transparent
-                      pb-4
-                      font-sans
-                      text-lg
-                      text-black
-                      outline-none
-                      placeholder:text-black/25
-                      sm:text-xl
-                    "
-                  />
-                </div>
+      <div className="flex gap-2">
+        <a
+          href="#"
+          aria-label="Instagram"
+          className="
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-black/20
+            text-black
+            transition-all
+            duration-300
+            hover:bg-black
+            hover:text-white
+          "
+        >
+          <FaInstagram className="text-sm" />
+        </a>
 
-                {/* Email */}
-                <div className="border-b border-black/20">
-                  <label
-                    htmlFor="email"
-                    className="
-                      mb-3
-                      block
-                      font-sans
-                      text-xs
-                      font-medium
-                      uppercase
-                      tracking-[0.12em]
-                      text-black/45
-                    "
-                  >
-                    Email Address
-                  </label>
+        <a
+          href="#"
+          aria-label="Facebook"
+          className="
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-black/20
+            text-black
+            transition-all
+            duration-300
+            hover:bg-black
+            hover:text-white
+          "
+        >
+          <FaFacebookF className="text-sm" />
+        </a>
 
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Your email address"
-                    className="
-                      w-full
-                      bg-transparent
-                      pb-4
-                      font-sans
-                      text-lg
-                      text-black
-                      outline-none
-                      placeholder:text-black/25
-                      sm:text-xl
-                    "
-                  />
-                </div>
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          className="
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-black/20
+            text-black
+            transition-all
+            duration-300
+            hover:bg-black
+            hover:text-white
+          "
+        >
+          <FaLinkedinIn className="text-sm" />
+        </a>
 
-                {/* Message */}
-                <div className="border-b border-black/20">
-                  <label
-                    htmlFor="message"
-                    className="
-                      mb-3
-                      block
-                      font-sans
-                      text-xs
-                      font-medium
-                      uppercase
-                      tracking-[0.12em]
-                      text-black/45
-                    "
-                  >
-                    Message
-                  </label>
-
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    placeholder="Tell me a little about your project..."
-                    className="
-                      w-full
-                      resize-none
-                      bg-transparent
-                      pb-4
-                      font-sans
-                      text-lg
-                      text-black
-                      outline-none
-                      placeholder:text-black/25
-                      sm:text-xl
-                    "
-                  />
-                </div>
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  className="
-                    group
-                    inline-flex
-                    items-center
-                    gap-4
-                    border-b
-                    border-black
-                    pb-2
-                    font-sans
-                    text-lg
-                    font-medium
-                    tracking-[-0.02em]
-                    transition-all
-                    duration-300
-                    hover:gap-6
-                    sm:text-xl
-                  "
-                >
-                  <span>Send Message</span>
-
-                  <FiArrowUpRight
-                    className="
-                      text-xl
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                      group-hover:-translate-y-1
-                    "
-                  />
-                </button>
-              </div>
-            </form>
-
-            {/* ================= CONTACT INFO ================= */}
-            <div className="order-2 lg:pt-1">
-              <p className="font-sans text-xs font-medium uppercase tracking-[0.18em] text-black/45">
-                Contact Details
-              </p>
-
-              <div className="mt-10 space-y-10">
-                {/* Email */}
-                <div>
-                  <div className="mb-3 flex items-center gap-3">
-                    <FiMail className="text-lg" />
-
-                    <span className="font-sans text-xs font-medium uppercase tracking-[0.12em] text-black/45">
-                      Email
-                    </span>
-                  </div>
-
-                  <a
-                    href="mailto:mahmoudeldahshann@gmail.com"
-                    className="
-                      font-sans
-                      text-lg
-                      tracking-[-0.02em]
-                      transition-opacity
-                      duration-300
-                      hover:opacity-50
-                      sm:text-xl
-                    "
-                  >
-                    mahmoudeldahshann@gmail.com
-                  </a>
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <div className="mb-3 flex items-center gap-3">
-                    <FiPhone className="text-lg" />
-
-                    <span className="font-sans text-xs font-medium uppercase tracking-[0.12em] text-black/45">
-                      Phone
-                    </span>
-                  </div>
-
-                  <a
-                    href="tel:+201011967626"
-                    className="
-                      font-sans
-                      text-lg
-                      tracking-[-0.02em]
-                      transition-opacity
-                      duration-300
-                      hover:opacity-50
-                      sm:text-xl
-                    "
-                  >
-                    +20 1011 96 7626
-                  </a>
-                </div>
-
-                {/* Location */}
-                <div>
-                  <div className="mb-3 flex items-center gap-3">
-                    <FiMapPin className="text-lg" />
-
-                    <span className="font-sans text-xs font-medium uppercase tracking-[0.12em] text-black/45">
-                      Location
-                    </span>
-                  </div>
-
-                  <p className="font-sans text-lg tracking-[-0.02em] sm:text-xl">
-                    Egypt
-                  </p>
-                </div>
-              </div>
-
-              {/* Social */}
-              <div className="mt-16 border-t border-black/15 pt-8">
-                <p className="mb-5 font-sans text-xs font-medium uppercase tracking-[0.18em] text-black/45">
-                  Follow
-                </p>
-
-                <div className="flex items-center gap-3">
-                  <a
-                    href="#"
-                    aria-label="Instagram"
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-black
-                      transition-all
-                      duration-300
-                      hover:bg-black
-                      hover:text-white
-                    "
-                  >
-                    <FaInstagram className="text-base" />
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="Facebook"
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-black
-                      transition-all
-                      duration-300
-                      hover:bg-black
-                      hover:text-white
-                    "
-                  >
-                    <FaFacebookF className="text-base" />
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="LinkedIn"
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-black
-                      transition-all
-                      duration-300
-                      hover:bg-black
-                      hover:text-white
-                    "
-                  >
-                    <FaLinkedinIn className="text-base" />
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="X"
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-black
-                      transition-all
-                      duration-300
-                      hover:bg-black
-                      hover:text-white
-                    "
-                  >
-                    <FaXTwitter className="text-base" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <a
+          href="#"
+          aria-label="X"
+          className="
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-black/20
+            text-black
+            transition-all
+            duration-300
+            hover:bg-black
+            hover:text-white
+          "
+        >
+          <FaXTwitter className="text-sm" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </section>
     </main>
