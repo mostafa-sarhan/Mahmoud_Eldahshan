@@ -103,7 +103,6 @@ export default function Services() {
         font-sans
         text-[48px]
         leading-[0.9]
-        tracking-[-0.05em]
         sm:text-[62px]
         md:text-[82px]
         lg:text-[105px]
