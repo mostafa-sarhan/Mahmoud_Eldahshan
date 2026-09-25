@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import {
   motion,
@@ -18,12 +18,37 @@ interface Service {
   items: string[]
 }
 
+const DESKTOP_MEDIA_QUERY = '(min-width: 64rem)'
+
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(
+    () =>
+      typeof window !== 'undefined' &&
+      window.matchMedia(DESKTOP_MEDIA_QUERY).matches,
+  )
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY)
+    const handleChange = (event: MediaQueryListEvent) => {
+      setIsDesktop(event.matches)
+    }
+
+    mediaQuery.addEventListener('change', handleChange)
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [])
+
+  return isDesktop
+}
+
 const services: Service[] = [
   {
     number: '01',
     title: 'Strategy',
-    description:'The foundation that determines how a business is positioned, how it competes, and how it makes decisions as it grows. Without it, every other branding effort lacks direction.',
-
+    description:
+      'The foundation that determines how a business is positioned, how it competes, and how it makes decisions as it grows. Without it, every other branding effort lacks direction.',
     items: [
       'Research & Insights',
       'Brand Positioning',
@@ -36,7 +61,8 @@ const services: Service[] = [
   {
     number: '02',
     title: 'Brand Evolution',
-    description:'The process that allows a brand to evolve or grow into new territory without losing what made it credible in the first place. It protects a brands identity while adapting it to a new stage or market.',
+    description:
+      'The process that allows a brand to evolve or grow into new territory without losing what made it credible in the first place. It protects a brands identity while adapting it to a new stage or market.',
     items: [
       'Repositioning Assessment',
       'Market Relevance Audit',
@@ -49,7 +75,8 @@ const services: Service[] = [
   {
     number: '03',
     title: 'Identity',
-    description:'The visible expression of a brands strategy — the layer through which people actually recognize and experience it. A strong identity turns strategic clarity into consistent perception.',
+    description:
+      'The visible expression of a brands strategy — the layer through which people actually recognize and experience it. A strong identity turns strategic clarity into consistent perception.',
     items: [
       'Verbal Identity & Naming ',
       'Visual Identity',
@@ -62,7 +89,8 @@ const services: Service[] = [
   {
     number: '04',
     title: 'Product Packaging ',
-    description:'Often the closest point of contact between a brand and its customer, and one of the few moments where a purchase decision is made instantly. Packaging carries the brands identity into a physical, competitive space.',
+    description:
+      'Often the closest point of contact between a brand and its customer, and one of the few moments where a purchase decision is made instantly. Packaging carries the brands identity into a physical, competitive space.',
     items: [
       'Packaging Strategy',
       'Category Differentiation',
@@ -331,44 +359,44 @@ export default function Services() {
           </div>
 
           {/* CTA */}
-        <div className="hidden lg:flex lg:justify-end">
-          <NavLink
-            to="/contact"
-            className="
-              group
-              inline-flex
-              items-center
-              gap-3
-              border-b
-              border-black
-              pb-2
-              font-sans
-              text-lg
-              font-medium
-              tracking-[-0.02em]
-              text-black
-              transition-all
-              duration-300
-              hover:gap-5
-              sm:text-xl
-              md:text-2xl
-            "
-          >
-            <span>Let's join forces</span>
-
-            <span
-              aria-hidden="true"
+          <div className="hidden lg:flex lg:justify-end">
+            <NavLink
+              to="/contact"
               className="
-                leading-none
-                transition-transform
+                group
+                inline-flex
+                items-center
+                gap-3
+                border-b
+                border-black
+                pb-2
+                font-sans
+                text-lg
+                font-medium
+                tracking-[-0.02em]
+                text-black
+                transition-all
                 duration-300
-                group-hover:translate-x-1
+                hover:gap-5
+                sm:text-xl
+                md:text-2xl
               "
             >
-              →
-            </span>
-          </NavLink>
-        </div>
+              <span>Let's join forces</span>
+
+              <span
+                aria-hidden="true"
+                className="
+                  leading-none
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              >
+                →
+              </span>
+            </NavLink>
+          </div>
         </div>
       </section>
 
@@ -377,13 +405,8 @@ export default function Services() {
       ========================= */}
 
       <section aria-label="Services" className="w-full">
-        {services.map((service, index) => (
-          <ServiceItem
-            key={service.number}
-            service={service}
-            isFirst={index === 0}
-            isLast={index === services.length - 1}
-          />
+        {services.map((service) => (
+          <ServiceItem key={service.number} service={service} />
         ))}
       </section>
 
@@ -505,29 +528,27 @@ export default function Services() {
     SERVICE ITEM
 ========================= */
 
-function ServiceItem({
-  service,
-  isFirst,
-  isLast,
-}: {
-  service: Service
-  isFirst: boolean
-  isLast: boolean
-}) {
+function ServiceItem({ service }: { service: Service }) {
   const sectionRef = useRef<HTMLElement>(null)
   const prefersReducedMotion = useReducedMotion()
+  const isDesktop = useIsDesktop()
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end end'],
   })
 
+  /*
+    Desktop scroll animation only.
+
+    On mobile/tablet we keep the service fully visible.
+    This prevents the last service (04) from becoming faded
+    depending on the scroll position.
+  */
   const opacity = useTransform(
     scrollYProgress,
-    isFirst ? [0, 0.85, 1] : [0, 0.12, 0.85, 1],
-    isFirst
-      ? [1, 1, 0.12]
-      : [0.08, 1, 1, isLast ? 1 : 0.12],
+    [0, 0.85, 1],
+    [1, 1, 0.12],
   )
 
   const y = useTransform(
@@ -542,9 +563,18 @@ function ServiceItem({
     [0.99, 1, 1],
   )
 
-  const motionStyle = prefersReducedMotion
-    ? undefined
-    : { opacity, y, scale }
+  /*
+    IMPORTANT:
+    The opacity/y/scale motion is applied only on lg screens.
+    Mobile and tablet remain completely static.
+  */
+  const desktopMotionStyle = isDesktop && !prefersReducedMotion
+    ? {
+        opacity,
+        y,
+        scale,
+      }
+    : undefined
 
   return (
     <section
@@ -569,8 +599,12 @@ function ServiceItem({
           lg:items-center
         "
       >
+        {/* =========================
+            DESKTOP ANIMATED WRAPPER
+        ========================= */}
+
         <motion.div
-          style={motionStyle}
+          style={desktopMotionStyle}
           className="
             w-full
             px-5
@@ -595,7 +629,7 @@ function ServiceItem({
               "
             >
               {/* =========================
-                  NUMBER + TAG
+                  NUMBER
               ========================= */}
 
               <motion.div
@@ -624,14 +658,13 @@ function ServiceItem({
                     text-[56px]
                     leading-[0.9]
                     tracking-[-0.04em]
+                    text-black
                     sm:text-[80px]
                     lg:text-[110px]
                   "
                 >
                   {service.number}
                 </p>
-
-
               </motion.div>
 
               {/* =========================
@@ -735,29 +768,29 @@ function ServiceItem({
                 }}
                 className="w-full lg:mt-1"
               >
-<div
-  className="
-    relative
-    w-full
-    overflow-hidden
-    aspect-[4/5]
-    lg:aspect-[3/4]
-  "
->
-  <video
-    src={video3}
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="metadata"
-    className="
-      h-full
-      w-full
-      object-cover
-    "
-  />
-</div>
+                <div
+                  className="
+                    relative
+                    aspect-[4/5]
+                    w-full
+                    overflow-hidden
+                    lg:aspect-[3/4]
+                  "
+                >
+                  <video
+                    src={video3}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="
+                      h-full
+                      w-full
+                      object-cover
+                    "
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -837,19 +870,6 @@ function CapabilityList({
           "
         >
           <span>{item}</span>
-
-          <span
-            aria-hidden="true"
-            className="
-              shrink-0
-              text-base
-              transition-transform
-              duration-300
-              group-hover:translate-x-1
-            "
-          >
-            →
-          </span>
         </motion.li>
       ))}
     </ul>
