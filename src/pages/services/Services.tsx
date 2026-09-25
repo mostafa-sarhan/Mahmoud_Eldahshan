@@ -541,9 +541,7 @@ function ServiceItem({ service }: { service: Service }) {
   /*
     Desktop scroll animation only.
 
-    On mobile/tablet we keep the service fully visible.
-    This prevents the last service (04) from becoming faded
-    depending on the scroll position.
+    On mobile/tablet the service stays fully visible.
   */
   const opacity = useTransform(
     scrollYProgress,
@@ -563,18 +561,14 @@ function ServiceItem({ service }: { service: Service }) {
     [0.99, 1, 1],
   )
 
-  /*
-    IMPORTANT:
-    The opacity/y/scale motion is applied only on lg screens.
-    Mobile and tablet remain completely static.
-  */
-  const desktopMotionStyle = isDesktop && !prefersReducedMotion
-    ? {
-        opacity,
-        y,
-        scale,
-      }
-    : undefined
+  const desktopMotionStyle =
+    isDesktop && !prefersReducedMotion
+      ? {
+          opacity,
+          y,
+          scale,
+        }
+      : undefined
 
   return (
     <section
@@ -599,10 +593,6 @@ function ServiceItem({ service }: { service: Service }) {
           lg:items-center
         "
       >
-        {/* =========================
-            DESKTOP ANIMATED WRAPPER
-        ========================= */}
-
         <motion.div
           style={desktopMotionStyle}
           className="
@@ -624,12 +614,13 @@ function ServiceItem({ service }: { service: Service }) {
                 grid-cols-1
                 gap-10
                 md:gap-12
-                lg:grid-cols-[0.7fr_1.6fr_0.8fr]
-                lg:gap-16
+                lg:grid-cols-[1fr_0.42fr]
+                lg:items-start
+                lg:gap-20
               "
             >
               {/* =========================
-                  NUMBER
+                  LEFT — CONTENT
               ========================= */}
 
               <motion.div
@@ -651,46 +642,7 @@ function ServiceItem({ service }: { service: Service }) {
                   duration: 0.7,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-              >
-                <p
-                  className="
-                    font-serif
-                    text-[56px]
-                    leading-[0.9]
-                    tracking-[-0.04em]
-                    text-black
-                    sm:text-[80px]
-                    lg:text-[110px]
-                  "
-                >
-                  {service.number}
-                </p>
-              </motion.div>
-
-              {/* =========================
-                  TITLE + DESCRIPTION + ITEMS
-              ========================= */}
-
-              <motion.div
-                initial={
-                  prefersReducedMotion
-                    ? false
-                    : { opacity: 0, y: 40 }
-                }
-                whileInView={
-                  prefersReducedMotion
-                    ? undefined
-                    : { opacity: 1, y: 0 }
-                }
-                viewport={{
-                  once: true,
-                  margin: '-12% 0px -12% 0px',
-                }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
+                className="order-2 lg:order-1"
               >
                 <h2
                   className="
@@ -701,8 +653,8 @@ function ServiceItem({ service }: { service: Service }) {
                     tracking-[-0.04em]
                     sm:text-[60px]
                     md:text-[76px]
-                    lg:text-[100px]
-                    xl:text-[112px]
+                    lg:text-[90px]
+                    xl:text-[105px]
                   "
                 >
                   {service.title.split(' ').map((word, index) => (
@@ -718,7 +670,7 @@ function ServiceItem({ service }: { service: Service }) {
                 <p
                   className="
                     mt-6
-                    max-w-[640px]
+                    max-w-[760px]
                     font-sans
                     text-lg
                     leading-[1.4]
@@ -732,10 +684,6 @@ function ServiceItem({ service }: { service: Service }) {
                   {service.description}
                 </p>
 
-                {/* =========================
-                    CAPABILITIES
-                ========================= */}
-
                 <CapabilityList
                   items={service.items}
                   prefersReducedMotion={prefersReducedMotion}
@@ -743,7 +691,7 @@ function ServiceItem({ service }: { service: Service }) {
               </motion.div>
 
               {/* =========================
-                  VIDEO
+                  RIGHT — NUMBER + VIDEO
               ========================= */}
 
               <motion.div
@@ -763,17 +711,43 @@ function ServiceItem({ service }: { service: Service }) {
                 }}
                 transition={{
                   duration: 0.7,
-                  delay: 0.2,
+                  delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="w-full lg:mt-1"
+                className="
+                  order-1
+                  w-full
+                  lg:order-2
+                "
               >
+                {/* NUMBER */}
+
+                <p
+                  className="
+                    font-serif
+                    text-[64px]
+                    leading-[0.85]
+                    tracking-[-0.04em]
+                    text-black
+                    sm:text-[80px]
+                    md:text-[96px]
+                    lg:text-[100px]
+                    xl:text-[115px]
+                  "
+                >
+                  {service.number}
+                </p>
+
+                {/* VIDEO */}
+
                 <div
                   className="
                     relative
+                    mt-5
                     aspect-[4/5]
                     w-full
                     overflow-hidden
+                    lg:mt-6
                     lg:aspect-[3/4]
                   "
                 >
