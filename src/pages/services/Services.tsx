@@ -284,9 +284,91 @@ export default function Services() {
   </div>
 </section>
 
+
+
+{/* Trusted by */}
 <section>
   <TrustedBy/>
 </section>
+
+
+{/*  */}
+<section
+  className="
+    w-full
+    border-b
+    border-black/10
+    px-5
+    py-6
+    sm:px-6
+    sm:py-8
+    md:px-10
+    md:py-14
+    lg:px-16
+    lg:py-18
+  "
+>
+  <div
+    className="
+      mx-auto
+      grid
+      max-w-[1500px]
+      grid-cols-1
+      gap-10
+      lg:grid-cols-[0.7fr_1.3fr]
+      lg:items-end
+      lg:gap-20
+    "
+  >
+    {/* Label */}
+    <div>
+      <p className="font-sans text-xl font-medium uppercase md:text-2xl">
+        (Focus Areas)
+      </p>
+    </div>
+
+{/* CTA */}
+<div className="lg:flex lg:justify-end">
+  <NavLink
+    to="/contact"
+    className="
+      group
+      inline-flex
+      items-center
+      gap-3
+      border-b
+      border-black
+      pb-2
+      font-sans
+      text-lg
+      font-medium
+      tracking-[-0.02em]
+      text-black
+      transition-all
+      duration-300
+      hover:gap-5
+      sm:text-xl
+      md:text-2xl
+    "
+  >
+    <span>Let's join forces</span>
+
+    <span
+      aria-hidden="true"
+      className="
+        leading-none
+        transition-transform
+        duration-300
+        group-hover:translate-x-1
+      "
+    >
+      →
+    </span>
+  </NavLink>
+</div>
+  </div>
+</section>
+
 
       
 
