@@ -916,7 +916,7 @@ function CapabilityList({
           md:text-2xl
         "
       >
-        <span>Require Now</span>
+        <span>Require now</span>
 
         <span
           aria-hidden="true"
