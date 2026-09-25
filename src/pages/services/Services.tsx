@@ -109,7 +109,7 @@ export default function Services() {
         xl:text-[110px]
       "
     >
-      Good branding is not decoration
+      Good branding is not decoration.
       <br />
       It is a decision,
       <br />
@@ -117,7 +117,7 @@ export default function Services() {
     </h1>
 
     <NavLink
-      to="projects"
+      to="/projects"
       className="
         group mt-10 inline-flex items-center gap-3
         border-b border-black pb-2
@@ -141,6 +141,9 @@ export default function Services() {
       </span>
     </NavLink>
   </div>
+</section>
+<section>
+  <PageMarqueeTwo title="Think Beyond The Brand" /> 
 </section>
 
       {/* =========================
