@@ -6,7 +6,7 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react'
-import PageMarquee from '@/components/PageMarquee/PageMarquee'
+// import PageMarquee from '@/components/PageMarquee/PageMarquee'
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
 
 interface Service {
@@ -103,12 +103,12 @@ export default function Services() {
       className="
         max-w-[1200px]
         font-sans
-        text-[48px]
+        text-[40px]
         leading-[0.9]
-        sm:text-[62px]
-        md:text-[82px]
-        lg:text-[105px]
-        xl:text-[110px]
+        sm:text-[50px]
+        md:text-[62px]
+        lg:text-[82px]
+        xl:text-[100px]
       "
     >
       Good branding is not decoration.
@@ -145,10 +145,133 @@ export default function Services() {
   </div>
 </section>
 
+      {/* =========================
+         Marq uee page
+      ========================= */}
 
-<section>
+{/* <section>
   <PageMarquee title="Think Beyond The Brand." /> 
+</section> */}
+
+      {/* =========================
+          MAIN SERVICES
+      ========================= */}
+<section
+  className="
+    w-full
+    border-t
+    border-black/10
+    px-5
+    py-16
+    sm:px-6
+    sm:py-20
+    md:px-10
+    md:py-28
+    lg:px-16
+    lg:py-36
+  "
+>
+  <div
+    className="
+      mx-auto
+      grid
+      max-w-[1500px]
+      grid-cols-1
+      gap-10
+      md:gap-14
+      lg:grid-cols-[0.7fr_1.3fr]
+      lg:gap-20
+    "
+  >
+    {/* Label */}
+    <div>
+      <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
+        (What I do)
+      </p>
+    </div>
+
+    {/* Content */}
+    <div className="max-w-[950px]">
+      <p
+        className="
+          font-sans
+          text-[25px]
+          leading-[1.15]
+          tracking-[-0.025em]
+          sm:text-[30px]
+          md:text-[38px]
+          lg:text-[48px]
+        "
+      >
+        Brand strategy and identity systems built to give brands a clearer
+        position in their market.
+      </p>
+
+      <p
+        className="
+          mt-8
+          max-w-[900px]
+          font-sans
+          text-lg
+          leading-[1.4]
+          tracking-[-0.02em]
+          text-black/60
+          sm:mt-10
+          sm:text-xl
+          md:text-2xl
+        "
+      >
+        I work with founders and business owners at the stage where a brand
+        needs a clearer foundation to grow, compete, or reposition itself.
+        Whether the business is starting out, entering a more competitive
+        market, or reassessing where it stands, I help clarify what makes the
+        brand different and build the strategic and visual systems that
+        support that direction.
+      </p>
+
+      {/* CTA */}
+      <a
+        href="/contact"
+        className="
+          group
+          mt-10
+          inline-flex
+          items-center
+          gap-3
+          border-b
+          border-black
+          pb-2
+          font-sans
+          text-lg
+          font-medium
+          tracking-[-0.02em]
+          text-black
+          transition-all
+          duration-300
+          hover:gap-5
+          sm:text-xl
+          md:mt-12
+          md:text-2xl
+        "
+      >
+        <span>Book a discovery call</span>
+
+        <span
+          aria-hidden="true"
+          className="
+            inline-block
+            transition-transform
+            duration-300
+            group-hover:translate-x-1
+          "
+        >
+          →
+        </span>
+      </a>
+    </div>
+  </div>
 </section>
+      
 
       {/* =========================
           MAIN SERVICES
