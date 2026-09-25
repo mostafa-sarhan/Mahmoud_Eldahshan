@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react'
+import PageMarquee from '@/components/PageMarquee/PageMarquee'
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
 
 interface Service {
@@ -94,6 +95,7 @@ export default function Services() {
     sm:px-6 sm:py-8
     md:px-10 md:py-14
     lg:px-16 lg:py-18
+    border-b border-black/15
   "
 >
   <div className="mx-auto max-w-[1500px]">
@@ -142,8 +144,10 @@ export default function Services() {
     </NavLink>
   </div>
 </section>
+
+
 <section>
-  <PageMarqueeTwo title="Think Beyond The Brand" /> 
+  <PageMarquee title="Think Beyond The Brand." /> 
 </section>
 
       {/* =========================
@@ -152,7 +156,7 @@ export default function Services() {
 
       <section
         aria-label="Services"
-        className="w-full border-t border-black/15"
+        className="w-full "
       >
         {services.map((service, index) => (
           <ServiceItem
