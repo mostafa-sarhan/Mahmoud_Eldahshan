@@ -756,22 +756,29 @@ function ServiceItem({
                 }}
                 className="w-full lg:mt-1"
               >
-                <div className="relative w-full overflow-hidden">
-                  <video
-                    src={video3}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="
-                      aspect-square
-                      h-full
-                      w-full
-                      object-cover
-                    "
-                  />
-                </div>
+<div
+  className="
+    relative
+    w-full
+    overflow-hidden
+    aspect-[4/5]
+    lg:aspect-[3/4]
+  "
+>
+  <video
+    src={video3}
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="metadata"
+    className="
+      h-full
+      w-full
+      object-cover
+    "
+  />
+</div>
               </motion.div>
             </div>
           </div>
