@@ -896,7 +896,7 @@ function CapabilityList({
         to="/contact"
         className="
           group
-          mt-12
+          mt-14
           inline-flex
           items-center
           gap-3
@@ -912,6 +912,7 @@ function CapabilityList({
           duration-300
           hover:gap-5
           sm:mt-14
+          lg:mt-18
           sm:text-xl
           md:text-2xl
         "
