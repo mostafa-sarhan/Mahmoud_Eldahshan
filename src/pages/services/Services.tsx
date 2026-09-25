@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import {
   motion,
   useReducedMotion,
@@ -88,37 +88,61 @@ export default function Services() {
           INTRO
       ========================= */}
 
-      <section
+<section
+  className="
+    w-full px-5 py-6
+    sm:px-6 sm:py-8
+    md:px-10 md:py-14
+    lg:px-16 lg:py-18
+  "
+>
+  <div className="mx-auto max-w-[1500px]">
+    <h1
+      className="
+        max-w-[1200px]
+        font-sans
+        text-[48px]
+        leading-[0.9]
+        tracking-[-0.05em]
+        sm:text-[62px]
+        md:text-[82px]
+        lg:text-[105px]
+        xl:text-[110px]
+      "
+    >
+      Good branding is not decoration
+      <br />
+      It is a decision,
+      <br />
+      made early and made well.
+    </h1>
+
+    <NavLink
+      to="projects"
+      className="
+        group mt-10 inline-flex items-center gap-3
+        border-b border-black pb-2
+        font-sans text-sm font-medium uppercase
+        tracking-[0.08em] text-black
+        transition-opacity duration-300
+        hover:opacity-50
+        md:mt-14
+      "
+    >
+      <span>Explore our work</span>
+
+      <span
         className="
-          w-full px-5 py-16
-          sm:px-6 sm:py-20
-          md:px-10 md:py-28
-          lg:px-16 lg:py-36
+          text-lg leading-none
+          transition-transform duration-300
+          group-hover:translate-x-1
         "
       >
-        <div className="mx-auto max-w-[1500px]">
-          <h1
-            className="
-              max-w-[1200px]
-              font-serif
-              text-[48px]
-              leading-[0.9]
-              tracking-[-0.05em]
-              sm:text-[62px]
-              md:text-[82px]
-              lg:text-[105px]
-              xl:text-[110px]
-            "
-          >
-            Good branding is not decoration
-            <br />
-             It is a decision,
-             <br />
-             made early and made well.
-          </h1>
-
-        </div>
-      </section>
+        →
+      </span>
+    </NavLink>
+  </div>
+</section>
 
       {/* =========================
           MAIN SERVICES

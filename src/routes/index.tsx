@@ -10,6 +10,7 @@ import HomePlaceholder from '@/pages/home/HomePlaceholder'
 import About from '@/pages/About/About'
 import Contact from '@/pages/contact/Contact'
 import Services from '@/pages/services/Services'
+import Projects from '@/pages/projects/Projects'
 
 export default function AppRoutes() {
   return (
@@ -24,6 +25,7 @@ export default function AppRoutes() {
         <Route path='about' element={<About />} />
         <Route path='services' element={<Services />} />
         <Route path='contact' element={<Contact />} />
+        <Route path='projects' element={<Projects />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
