@@ -713,14 +713,14 @@ function ServiceItem({ service }: { service: Service }) {
 
                 <p
                   className="
-                    mt-6
+                    mt-8
                     max-w-[760px]
                     font-sans
                     text-lg
                     leading-[1.4]
                     tracking-[-0.02em]
                     text-black/60
-                    sm:mt-8
+                    sm:mt-12
                     sm:text-xl
                     md:text-2xl
                   "
@@ -822,7 +822,6 @@ function ServiceItem({ service }: { service: Service }) {
 /* =========================
     CAPABILITY LIST
 ========================= */
-
 function CapabilityList({
   items,
   prefersReducedMotion,
@@ -831,67 +830,110 @@ function CapabilityList({
   prefersReducedMotion: boolean | null
 }) {
   return (
-    <ul
-      className="
-        mt-10
-        grid
-        grid-cols-2
-        border-t
-        border-black/15
-        sm:mt-12
-      "
-    >
-      {items.map((item, index) => (
-        <motion.li
-          key={item}
-          initial={
-            prefersReducedMotion
-              ? false
-              : { opacity: 0, y: 20 }
-          }
-          whileInView={
-            prefersReducedMotion
-              ? undefined
-              : { opacity: 1, y: 0 }
-          }
-          viewport={{
-            once: true,
-            margin: '-10% 0px -10% 0px',
-          }}
-          transition={{
-            duration: 0.5,
-            delay: prefersReducedMotion
-              ? 0
-              : index * 0.08,
-            ease: [0.22, 1, 0.36, 1],
-          }}
+    <div className="mt-10 sm:mt-12">
+      <ul
+        className="
+          grid
+          grid-cols-2
+          border-t
+          border-black/15
+        "
+      >
+        {items.map((item, index) => (
+          <motion.li
+            key={item}
+            initial={
+              prefersReducedMotion
+                ? false
+                : { opacity: 0, y: 20 }
+            }
+            whileInView={
+              prefersReducedMotion
+                ? undefined
+                : { opacity: 1, y: 0 }
+            }
+            viewport={{
+              once: true,
+              margin: '-10% 0px -10% 0px',
+            }}
+            transition={{
+              duration: 0.5,
+              delay: prefersReducedMotion
+                ? 0
+                : index * 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="
+              group
+              flex
+              items-center
+              justify-between
+              gap-4
+              border-b
+              border-black/10
+              py-3.5
+              pr-4
+              font-sans
+              text-sm
+              font-medium
+              tracking-[-0.01em]
+              text-black/60
+              transition-colors
+              duration-300
+              hover:text-black
+              sm:text-base
+              md:text-lg
+              lg:pr-6
+            "
+          >
+            <span>{item}</span>
+          </motion.li>
+        ))}
+      </ul>
+
+      {/* REQUIRE NOW */}
+      <NavLink
+        to="/contact"
+        className="
+          group
+          mt-12
+          inline-flex
+          items-center
+          gap-3
+          border-b
+          border-black
+          pb-2
+          font-sans
+          text-lg
+          font-medium
+          tracking-[-0.02em]
+          text-black
+          transition-all
+          duration-300
+          hover:gap-5
+          sm:mt-14
+          sm:text-xl
+          md:text-2xl
+        "
+      >
+        <span>Require Now</span>
+
+        <span
+          aria-hidden="true"
           className="
-            group
-            flex
-            items-center
-            justify-between
-            gap-4
-            border-b
-            border-black/10
-            py-3.5
-            pr-4
-            font-sans
-            text-sm
-            font-medium
-            tracking-[-0.01em]
-            text-black/60
-            transition-colors
+            inline-block
+            leading-none
+            transition-transform
             duration-300
-            hover:text-black
-            sm:text-base
-            md:text-lg
-            lg:pr-6
+            group-hover:translate-x-1
           "
         >
-          <span>{item}</span>
-        </motion.li>
-      ))}
-    </ul>
+          →
+        </span>
+      </NavLink>
+    </div>
   )
 }
+
+
 
