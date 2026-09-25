@@ -106,32 +106,17 @@ export default function Services() {
               tracking-[-0.05em]
               sm:text-[62px]
               md:text-[82px]
-              lg:text-[115px]
-              xl:text-[135px]
+              lg:text-[105px]
+              xl:text-[110px]
             "
           >
-            How I
+            Good branding is not decoration
             <br />
-            can help.
+             It is a decision,
+             <br />
+             made early and made well.
           </h1>
 
-          <p
-            className="
-              mt-8
-              max-w-[680px]
-              font-sans
-              text-lg
-              leading-[1.4]
-              tracking-[-0.02em]
-              text-black/50
-              sm:mt-10
-              sm:text-xl
-              md:text-2xl
-            "
-          >
-            From defining the strategy to bringing the brand to life, I help
-            turn ideas into clear, distinctive, and meaningful experiences.
-          </p>
         </div>
       </section>
 
