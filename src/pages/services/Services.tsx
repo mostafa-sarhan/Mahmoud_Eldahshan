@@ -13,7 +13,6 @@ import video3 from '@/assets/video/video3.mp4'
 
 interface Service {
   number: string
-  tag: string
   title: string
   description: string
   items: string[]
@@ -22,62 +21,55 @@ interface Service {
 const services: Service[] = [
   {
     number: '01',
-    tag: 'Foundation',
-    title: 'Brand Strategy',
-    description:
-      'Define the direction behind the brand, clarify its position, and build a strategic foundation that gives every decision a clear purpose.',
+    title: 'Strategy',
+    description:'The foundation that determines how a business is positioned, how it competes, and how it makes decisions as it grows. Without it, every other branding effort lacks direction.',
+
     items: [
-      'Brand Positioning',
-      'Brand Strategy',
       'Research & Insights',
-      'Vision & Purpose',
-      'Strategic Narrative',
+      'Brand Positioning',
+      'Strategic Workshops',
+      'Competitive Analysis',
+      'Value Proposition',
       'Brand Architecture',
     ],
   },
   {
     number: '02',
-    tag: 'Expression',
-    title: 'Visual Identity',
-    description:
-      'Turn strategy into a distinctive visual language that makes the brand recognizable, consistent, and impossible to confuse.',
+    title: 'Brand Evolution',
+    description:'The process that allows a brand to evolve or grow into new territory without losing what made it credible in the first place. It protects a brands identity while adapting it to a new stage or market.',
     items: [
-      'Visual Identity',
-      'Art Direction',
-      'Logo & Identity Systems',
-      'Design Systems',
-      'Typography',
-      'Brand Guidelines',
+      'Repositioning Assessment',
+      'Market Relevance Audit',
+      'Sub-Brand Strategy',
+      'Extension Feasibility',
+      'Transition Guidelines',
+      'Stakeholder Alignment',
     ],
   },
   {
     number: '03',
-    tag: 'Interaction',
-    title: 'Digital Experience',
-    description:
-      'Create digital experiences that translate the brand into clear, engaging, and meaningful interactions.',
+    title: 'Identity',
+    description:'The visible expression of a brands strategy — the layer through which people actually recognize and experience it. A strong identity turns strategic clarity into consistent perception.',
     items: [
-      'Website Design',
-      'UI/UX Design',
-      'Digital Direction',
-      'Interaction Design',
-      'Motion Design',
-      'Creative Development',
+      'Verbal Identity & Naming ',
+      'Visual Identity',
+      'Design Systems',
+      'Art Direction',
+      'Visual Assets',
+      'Brand Guidelines',
     ],
   },
   {
     number: '04',
-    tag: 'Evolution',
-    title: 'Brand Growth',
-    description:
-      'Build the tools and thinking needed to keep the brand evolving, communicating clearly, and creating lasting value.',
+    title: 'Product Packaging ',
+    description:'Often the closest point of contact between a brand and its customer, and one of the few moments where a purchase decision is made instantly. Packaging carries the brands identity into a physical, competitive space.',
     items: [
-      'Campaign Direction',
-      'Content Direction',
-      'Brand Communication',
-      'Creative Direction',
-      'Brand Launch',
-      'Ongoing Brand Support',
+      'Packaging Strategy',
+      'Category Differentiation',
+      'Structural & Format Direction',
+      'Visual Design & Artwork',
+      'Packaging Guidelines',
+      'Shelf & Retail Impact',
     ],
   },
 ]
@@ -339,44 +331,44 @@ export default function Services() {
           </div>
 
           {/* CTA */}
-          <div className="lg:flex lg:justify-end">
-            <NavLink
-              to="/contact"
+        <div className="hidden lg:flex lg:justify-end">
+          <NavLink
+            to="/contact"
+            className="
+              group
+              inline-flex
+              items-center
+              gap-3
+              border-b
+              border-black
+              pb-2
+              font-sans
+              text-lg
+              font-medium
+              tracking-[-0.02em]
+              text-black
+              transition-all
+              duration-300
+              hover:gap-5
+              sm:text-xl
+              md:text-2xl
+            "
+          >
+            <span>Let's join forces</span>
+
+            <span
+              aria-hidden="true"
               className="
-                group
-                inline-flex
-                items-center
-                gap-3
-                border-b
-                border-black
-                pb-2
-                font-sans
-                text-lg
-                font-medium
-                tracking-[-0.02em]
-                text-black
-                transition-all
+                leading-none
+                transition-transform
                 duration-300
-                hover:gap-5
-                sm:text-xl
-                md:text-2xl
+                group-hover:translate-x-1
               "
             >
-              <span>Let's join forces</span>
-
-              <span
-                aria-hidden="true"
-                className="
-                  leading-none
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              >
-                →
-              </span>
-            </NavLink>
-          </div>
+              →
+            </span>
+          </NavLink>
+        </div>
         </div>
       </section>
 
@@ -639,20 +631,7 @@ function ServiceItem({
                   {service.number}
                 </p>
 
-                <p
-                  className="
-                    mt-4
-                    font-sans
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    tracking-[0.18em]
-                    text-black/40
-                    sm:text-xs
-                  "
-                >
-                  {service.tag}
-                </p>
+
               </motion.div>
 
               {/* =========================
