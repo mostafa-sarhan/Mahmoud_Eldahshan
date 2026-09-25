@@ -8,6 +8,7 @@ import {
 } from 'motion/react'
 // import PageMarquee from '@/components/PageMarquee/PageMarquee'
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
+import TrustedBy from '../home/TrustedBy'
 
 interface Service {
   number: string
@@ -171,7 +172,7 @@ export default function Services() {
 <section
   className="
     w-full
-    border-t
+    border-b
     border-black/10
     px-5
     py-16
@@ -282,6 +283,11 @@ export default function Services() {
     </div>
   </div>
 </section>
+
+<section>
+  <TrustedBy/>
+</section>
+
       
 
       {/* =========================
