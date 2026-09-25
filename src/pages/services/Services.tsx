@@ -11,6 +11,7 @@ import {
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
 import TrustedBy from '../home/TrustedBy'
 import video3 from '@/assets/video/video3.mp4'
+import PageMarquee from '@/components/PageMarquee/PageMarquee'
 
 interface Service {
   number: string
@@ -408,6 +409,12 @@ export default function Services() {
         ))}
       </section>
 
+
+      {/* Section think beyoiund */}
+      <section>
+        <PageMarquee title="Think Beyond The Brand." />
+      </section>
+
       {/* =========================
           CLOSING CTA
       ========================= */}
@@ -415,7 +422,7 @@ export default function Services() {
       <section
         className="
           w-full
-          border-t
+          border-b
           border-black/15
           px-5
           py-16
@@ -518,6 +525,7 @@ export default function Services() {
           </div>
         </div>
       </section>
+
     </main>
   )
 }
