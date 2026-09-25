@@ -6,9 +6,10 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react'
-// import PageMarquee from '@/components/PageMarquee/PageMarquee'
+
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
 import TrustedBy from '../home/TrustedBy'
+import video3 from '@/assets/video/video3.mp4'
 
 interface Service {
   number: string
@@ -84,302 +85,306 @@ const services: Service[] = [
 export default function Services() {
   return (
     <main className="w-full overflow-hidden bg-white text-black">
+      {/* =========================
+          PAGE MARQUEE
+      ========================= */}
+
       <PageMarqueeTwo title="SERVICES" />
 
       {/* =========================
           INTRO
       ========================= */}
 
-<section
-  className="
-    w-full px-5 py-6
-    sm:px-6 sm:py-8
-    md:px-10 md:py-14
-    lg:px-16 lg:py-18
-    border-b border-black/15
-  "
->
-  <div className="mx-auto max-w-[1500px]">
-    <h1
-      className="
-        max-w-[1200px]
-        font-sans
-        text-[40px]
-        leading-[0.9]
-        sm:text-[50px]
-        md:text-[62px]
-        lg:text-[82px]
-        xl:text-[100px]
-      "
-    >
-      Good branding is not decoration.
-      <br />
-      It is a decision,
-      <br />
-      made early and made well.
-    </h1>
-
-    <NavLink
-      to="/projects"
-      className="
-          group
-          mt-10
-          inline-flex
-          items-center
-          gap-3
+      <section
+        className="
+          w-full
           border-b
-          border-black
-          pb-2
-          font-sans
-          text-lg
-          font-medium
-          tracking-[-0.02em]
-          text-black
-          transition-all
-          duration-300
-          hover:gap-5
-          sm:text-xl
-          md:mt-12
-          md:text-2xl
-      "
-    >
-      <span>Explore our work</span>
-
-      <span
-        className="
-          text-lg leading-none
-          transition-transform duration-300
-          group-hover:translate-x-1
+          border-black/15
+          px-5
+          py-6
+          sm:px-6
+          sm:py-8
+          md:px-10
+          md:py-14
+          lg:px-16
+          lg:py-18
         "
       >
-        →
-      </span>
-    </NavLink>
-  </div>
-</section>
+        <div className="mx-auto max-w-[1500px]">
+          <h1
+            className="
+              max-w-[1200px]
+              font-sans
+              text-[40px]
+              leading-[0.9]
+              sm:text-[50px]
+              md:text-[62px]
+              lg:text-[82px]
+              xl:text-[100px]
+            "
+          >
+            Good branding is not decoration.
+            <br />
+            It is a decision,
+            <br />
+            made early and made well.
+          </h1>
+
+          <NavLink
+            to="/projects"
+            className="
+              group
+              mt-10
+              inline-flex
+              items-center
+              gap-3
+              border-b
+              border-black
+              pb-2
+              font-sans
+              text-lg
+              font-medium
+              tracking-[-0.02em]
+              text-black
+              transition-all
+              duration-300
+              hover:gap-5
+              sm:text-xl
+              md:mt-12
+              md:text-2xl
+            "
+          >
+            <span>Explore our work</span>
+
+            <span
+              aria-hidden="true"
+              className="
+                text-lg
+                leading-none
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            >
+              →
+            </span>
+          </NavLink>
+        </div>
+      </section>
 
       {/* =========================
-         Marq uee page
-      ========================= */}
-
-{/* <section>
-  <PageMarquee title="Think Beyond The Brand." /> 
-</section> */}
-
-      {/* =========================
-          MAIN SERVICES
-      ========================= */}
-<section
-  className="
-    w-full
-    border-t
-    border-black/10
-    px-5
-    py-16
-    sm:px-6
-    sm:py-20
-    md:px-10
-    md:py-28
-    lg:px-16
-    lg:py-36
-  "
->
-  <div
-    className="
-      mx-auto
-      grid
-      max-w-[1500px]
-      grid-cols-1
-      gap-10
-      md:gap-14
-      lg:grid-cols-[0.7fr_1.3fr]
-      lg:gap-20
-    "
-  >
-    {/* Label */}
-    <div>
-      <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
-        (What I do)
-      </p>
-    </div>
-
-    {/* Content */}
-    <div className="max-w-[950px]">
-      <p
-        className="
-          font-sans
-          text-[25px]
-          leading-[1.15]
-          tracking-[-0.025em]
-          sm:text-[30px]
-          md:text-[38px]
-          lg:text-[48px]
-        "
-      >
-        Brand strategy and identity systems built to give brands a clearer
-        position in their market.
-      </p>
-
-      <p
-        className="
-          mt-8
-          max-w-[900px]
-          font-sans
-          text-lg
-          leading-[1.4]
-          tracking-[-0.02em]
-          text-black/60
-          sm:mt-10
-          sm:text-xl
-          md:text-2xl
-        "
-      >
-        I work with founders and business owners at the stage where a brand
-        needs a clearer foundation to grow, compete, or reposition itself.
-        Whether the business is starting out, entering a more competitive
-        market, or reassessing where it stands, I help clarify what makes the
-        brand different and build the strategic and visual systems that
-        support that direction.
-      </p>
-
-      {/* CTA */}
-      <a
-        href="/contact"
-        className="
-          group
-          mt-10
-          inline-flex
-          items-center
-          gap-3
-          border-b
-          border-black
-          pb-2
-          font-sans
-          text-lg
-          font-medium
-          tracking-[-0.02em]
-          text-black
-          transition-all
-          duration-300
-          hover:gap-5
-          sm:text-xl
-          md:mt-12
-          md:text-2xl
-        "
-      >
-        <span>Book a discovery call</span>
-
-        <span
-          aria-hidden="true"
-          className="
-          text-lg leading-none
-          transition-transform duration-300
-          group-hover:translate-x-1
-          "
-        >
-          →
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-{/* Trusted by */}
-<section>
-  <TrustedBy/>
-</section>
-
-
-{/*  */}
-<section
-  className="
-    w-full
-    border-b
-    border-black/10
-    px-5
-    py-6
-    sm:px-6
-    sm:py-8
-    md:px-10
-    md:py-14
-    lg:px-16
-    lg:py-18
-  "
->
-  <div
-    className="
-      mx-auto
-      grid
-      max-w-[1500px]
-      grid-cols-1
-      gap-10
-      lg:grid-cols-[0.7fr_1.3fr]
-      lg:items-end
-      lg:gap-20
-    "
-  >
-    {/* Label */}
-    <div>
-      <p className="font-sans text-xl font-medium uppercase md:text-2xl">
-        (Focus Areas)
-      </p>
-    </div>
-
-{/* CTA */}
-<div className="lg:flex lg:justify-end">
-  <NavLink
-    to="/contact"
-    className="
-      group
-      inline-flex
-      items-center
-      gap-3
-      border-b
-      border-black
-      pb-2
-      font-sans
-      text-lg
-      font-medium
-      tracking-[-0.02em]
-      text-black
-      transition-all
-      duration-300
-      hover:gap-5
-      sm:text-xl
-      md:text-2xl
-    "
-  >
-    <span>Let's join forces</span>
-
-    <span
-      aria-hidden="true"
-      className="
-        leading-none
-        transition-transform
-        duration-300
-        group-hover:translate-x-1
-      "
-    >
-      →
-    </span>
-  </NavLink>
-</div>
-  </div>
-</section>
-
-
-      
-
-      {/* =========================
-          MAIN SERVICES
+          WHAT I DO
       ========================= */}
 
       <section
-        aria-label="Services"
-        className="w-full "
+        className="
+          w-full
+          border-t
+          border-black/10
+          px-5
+          py-16
+          sm:px-6
+          sm:py-20
+          md:px-10
+          md:py-28
+          lg:px-16
+          lg:py-36
+        "
       >
+        <div
+          className="
+            mx-auto
+            grid
+            max-w-[1500px]
+            grid-cols-1
+            gap-10
+            md:gap-14
+            lg:grid-cols-[0.7fr_1.3fr]
+            lg:gap-20
+          "
+        >
+          {/* Label */}
+          <div>
+            <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
+              (What I do)
+            </p>
+          </div>
+
+          {/* Content */}
+          <div className="max-w-[950px]">
+            <p
+              className="
+                font-sans
+                text-[25px]
+                leading-[1.15]
+                tracking-[-0.025em]
+                sm:text-[30px]
+                md:text-[38px]
+                lg:text-[48px]
+              "
+            >
+              Brand strategy and identity systems built to give brands a
+              clearer position in their market.
+            </p>
+
+            <p
+              className="
+                mt-8
+                max-w-[900px]
+                font-sans
+                text-lg
+                leading-[1.4]
+                tracking-[-0.02em]
+                text-black/60
+                sm:mt-10
+                sm:text-xl
+                md:text-2xl
+              "
+            >
+              I work with founders and business owners at the stage where a
+              brand needs a clearer foundation to grow, compete, or reposition
+              itself. Whether the business is starting out, entering a more
+              competitive market, or reassessing where it stands, I help
+              clarify what makes the brand different and build the strategic
+              and visual systems that support that direction.
+            </p>
+
+            <NavLink
+              to="/contact"
+              className="
+                group
+                mt-10
+                inline-flex
+                items-center
+                gap-3
+                border-b
+                border-black
+                pb-2
+                font-sans
+                text-lg
+                font-medium
+                tracking-[-0.02em]
+                text-black
+                transition-all
+                duration-300
+                hover:gap-5
+                sm:text-xl
+                md:mt-12
+                md:text-2xl
+              "
+            >
+              <span>Book a discovery call</span>
+
+              <span
+                aria-hidden="true"
+                className="
+                  text-lg
+                  leading-none
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              >
+                →
+              </span>
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+          TRUSTED BY
+      ========================= */}
+
+      <section>
+        <TrustedBy />
+      </section>
+
+      {/* =========================
+          FOCUS AREAS
+      ========================= */}
+
+      <section
+        className="
+          w-full
+          border-b
+          border-black/10
+          px-5
+          py-6
+          sm:px-6
+          sm:py-8
+          md:px-10
+          md:py-14
+          lg:px-16
+          lg:py-18
+        "
+      >
+        <div
+          className="
+            mx-auto
+            grid
+            max-w-[1500px]
+            grid-cols-1
+            gap-10
+            lg:grid-cols-[0.7fr_1.3fr]
+            lg:items-end
+            lg:gap-20
+          "
+        >
+          {/* Label */}
+          <div>
+            <p className="font-sans text-xl font-medium uppercase md:text-2xl">
+              (Focus Areas)
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="lg:flex lg:justify-end">
+            <NavLink
+              to="/contact"
+              className="
+                group
+                inline-flex
+                items-center
+                gap-3
+                border-b
+                border-black
+                pb-2
+                font-sans
+                text-lg
+                font-medium
+                tracking-[-0.02em]
+                text-black
+                transition-all
+                duration-300
+                hover:gap-5
+                sm:text-xl
+                md:text-2xl
+              "
+            >
+              <span>Let's join forces</span>
+
+              <span
+                aria-hidden="true"
+                className="
+                  leading-none
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              >
+                →
+              </span>
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+          MAIN SERVICES
+      ========================= */}
+
+      <section aria-label="Services" className="w-full">
         {services.map((service, index) => (
           <ServiceItem
             key={service.number}
@@ -532,8 +537,18 @@ function ServiceItem({
       ? [1, 1, 0.12]
       : [0.08, 1, 1, isLast ? 1 : 0.12],
   )
-  const y = useTransform(scrollYProgress, [0, 0.12, 1], [60, 0, -40])
-  const scale = useTransform(scrollYProgress, [0, 0.12, 1], [0.99, 1, 1])
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.12, 1],
+    [60, 0, -40],
+  )
+
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.12, 1],
+    [0.99, 1, 1],
+  )
 
   const motionStyle = prefersReducedMotion
     ? undefined
@@ -544,7 +559,14 @@ function ServiceItem({
       id={`service-${service.number}`}
       ref={sectionRef}
       aria-label={service.title}
-      className="relative w-full border-t border-black/15 lg:min-h-screen first:border-t-0"
+      className="
+        relative
+        w-full
+        border-t
+        border-black/15
+        lg:min-h-screen
+        first:border-t-0
+      "
     >
       <div
         className="
@@ -558,6 +580,7 @@ function ServiceItem({
         <motion.div
           style={motionStyle}
           className="
+            w-full
             px-5
             py-20
             sm:px-6
@@ -579,14 +602,29 @@ function ServiceItem({
                 lg:gap-16
               "
             >
-              {/* ===== Number + tag ===== */}
+              {/* =========================
+                  NUMBER + TAG
+              ========================= */}
+
               <motion.div
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
-                whileInView={
-                  prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+                initial={
+                  prefersReducedMotion
+                    ? false
+                    : { opacity: 0, y: 40 }
                 }
-                viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                whileInView={
+                  prefersReducedMotion
+                    ? undefined
+                    : { opacity: 1, y: 0 }
+                }
+                viewport={{
+                  once: true,
+                  margin: '-12% 0px -12% 0px',
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
                 <p
                   className="
@@ -617,13 +655,25 @@ function ServiceItem({
                 </p>
               </motion.div>
 
-              {/* ===== Title + description ===== */}
+              {/* =========================
+                  TITLE + DESCRIPTION + ITEMS
+              ========================= */}
+
               <motion.div
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
-                whileInView={
-                  prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+                initial={
+                  prefersReducedMotion
+                    ? false
+                    : { opacity: 0, y: 40 }
                 }
-                viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
+                whileInView={
+                  prefersReducedMotion
+                    ? undefined
+                    : { opacity: 1, y: 0 }
+                }
+                viewport={{
+                  once: true,
+                  margin: '-12% 0px -12% 0px',
+                }}
                 transition={{
                   duration: 0.7,
                   delay: 0.1,
@@ -644,7 +694,10 @@ function ServiceItem({
                   "
                 >
                   {service.title.split(' ').map((word, index) => (
-                    <span key={`${word}-${index}`} className="block break-words">
+                    <span
+                      key={`${word}-${index}`}
+                      className="block break-words"
+                    >
                       {word}
                     </span>
                   ))}
@@ -666,24 +719,59 @@ function ServiceItem({
                 >
                   {service.description}
                 </p>
-              </motion.div>
 
-              {/* ===== Capabilities ===== */}
-              <motion.div
-                initial={
-                  prefersReducedMotion ? false : { opacity: 0, y: 40 }
-                }
-                whileInView={
-                  prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
-                }
-                viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
-                transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="lg:mt-1 lg:max-w-[380px]"
-              >
+                {/* =========================
+                    CAPABILITIES
+                ========================= */}
+
                 <CapabilityList
                   items={service.items}
                   prefersReducedMotion={prefersReducedMotion}
                 />
+              </motion.div>
+
+              {/* =========================
+                  VIDEO
+              ========================= */}
+
+              <motion.div
+                initial={
+                  prefersReducedMotion
+                    ? false
+                    : { opacity: 0, y: 40 }
+                }
+                whileInView={
+                  prefersReducedMotion
+                    ? undefined
+                    : { opacity: 1, y: 0 }
+                }
+                viewport={{
+                  once: true,
+                  margin: '-12% 0px -12% 0px',
+                }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="w-full lg:mt-1"
+              >
+                <div className="relative w-full overflow-hidden">
+                  <video
+                    src={video3}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="
+                      aspect-square
+                      h-full
+                      w-full
+                      object-cover
+                    "
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -705,18 +793,38 @@ function CapabilityList({
   prefersReducedMotion: boolean | null
 }) {
   return (
-    <ul className="border-t border-black/15">
+    <ul
+      className="
+        mt-10
+        grid
+        grid-cols-2
+        border-t
+        border-black/15
+        sm:mt-12
+      "
+    >
       {items.map((item, index) => (
         <motion.li
           key={item}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={
-            prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+          initial={
+            prefersReducedMotion
+              ? false
+              : { opacity: 0, y: 20 }
           }
-          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+          whileInView={
+            prefersReducedMotion
+              ? undefined
+              : { opacity: 1, y: 0 }
+          }
+          viewport={{
+            once: true,
+            margin: '-10% 0px -10% 0px',
+          }}
           transition={{
             duration: 0.5,
-            delay: prefersReducedMotion ? 0 : index * 0.08,
+            delay: prefersReducedMotion
+              ? 0
+              : index * 0.08,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
@@ -724,19 +832,22 @@ function CapabilityList({
             flex
             items-center
             justify-between
-            gap-6
+            gap-4
             border-b
             border-black/10
             py-3.5
+            pr-4
             font-sans
-            text-base
+            text-sm
             font-medium
             tracking-[-0.01em]
             text-black/60
             transition-colors
             duration-300
             hover:text-black
-            sm:text-lg
+            sm:text-base
+            md:text-lg
+            lg:pr-6
           "
         >
           <span>{item}</span>
