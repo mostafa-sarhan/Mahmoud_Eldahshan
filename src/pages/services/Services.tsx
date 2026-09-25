@@ -172,7 +172,7 @@ export default function Services() {
 <section
   className="
     w-full
-    border-b
+    border-t
     border-black/10
     px-5
     py-16

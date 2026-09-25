@@ -24,10 +24,19 @@ const logos = [
 
 export default function TrustedBy() {
   return (
-    <section className="w-full overflow-hidden bg-white py-20 md:py-26">
+    <section className="w-full
+    px-5
+    py-16
+    sm:px-5
+    sm:py-20
+    md:px-10
+    md:py-28
+    lg:px-16
+    lg:py-36
+      overflow-hidden bg-white py-10 md:py-16">
 
-      <div className="px-6 md:px-10">
-        <p className="mb-10 font-sans text-xl uppercase md:text-2xl font-medium">
+      <div className="">
+        <p className="mb-10  font-sans text-xl uppercase md:text-2xl font-medium">
           (Trusted By)
         </p>
       </div>
