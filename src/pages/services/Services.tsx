@@ -121,13 +121,25 @@ export default function Services() {
     <NavLink
       to="/projects"
       className="
-        group mt-10 inline-flex items-center gap-3
-        border-b border-black pb-2
-        font-sans text-sm font-medium uppercase
-        tracking-[0.08em] text-black
-        transition-opacity duration-300
-        hover:opacity-50
-        md:mt-14
+          group
+          mt-10
+          inline-flex
+          items-center
+          gap-3
+          border-b
+          border-black
+          pb-2
+          font-sans
+          text-lg
+          font-medium
+          tracking-[-0.02em]
+          text-black
+          transition-all
+          duration-300
+          hover:gap-5
+          sm:text-xl
+          md:mt-12
+          md:text-2xl
       "
     >
       <span>Explore our work</span>
@@ -259,10 +271,9 @@ export default function Services() {
         <span
           aria-hidden="true"
           className="
-            inline-block
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
+          text-lg leading-none
+          transition-transform duration-300
+          group-hover:translate-x-1
           "
         >
           →
