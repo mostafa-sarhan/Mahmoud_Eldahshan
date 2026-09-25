@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import {
@@ -29,6 +30,7 @@ function useIsDesktop() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY)
+
     const handleChange = (event: MediaQueryListEvent) => {
       setIsDesktop(event.matches)
     }
@@ -223,14 +225,12 @@ export default function Services() {
             lg:gap-20
           "
         >
-          {/* Label */}
           <div>
             <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
               (What I do)
             </p>
           </div>
 
-          {/* Content */}
           <div className="max-w-[950px]">
             <p
               className="
@@ -351,14 +351,12 @@ export default function Services() {
             lg:gap-20
           "
         >
-          {/* Label */}
           <div>
             <p className="font-sans text-xl font-medium uppercase md:text-2xl">
               (Focus Areas)
             </p>
           </div>
 
-          {/* CTA */}
           <div className="hidden lg:flex lg:justify-end">
             <NavLink
               to="/contact"
@@ -539,9 +537,8 @@ function ServiceItem({ service }: { service: Service }) {
   })
 
   /*
+    All services start fully visible.
     Desktop scroll animation only.
-
-    On mobile/tablet the service stays fully visible.
   */
   const opacity = useTransform(
     scrollYProgress,
@@ -620,7 +617,8 @@ function ServiceItem({ service }: { service: Service }) {
               "
             >
               {/* =========================
-                  LEFT — CONTENT
+                  MOBILE/TABLET:
+                  NUMBER
               ========================= */}
 
               <motion.div
@@ -642,7 +640,53 @@ function ServiceItem({ service }: { service: Service }) {
                   duration: 0.7,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="order-2 lg:order-1"
+                className="
+                  order-1
+                  lg:hidden
+                "
+              >
+                <p
+                  className="
+                    font-serif
+                    text-[56px]
+                    leading-[0.9]
+                    tracking-[-0.04em]
+                    text-black
+                    sm:text-[80px]
+                  "
+                >
+                  {service.number}
+                </p>
+              </motion.div>
+
+              {/* =========================
+                  LEFT — CONTENT
+                  DESKTOP
+              ========================= */}
+
+              <motion.div
+                initial={
+                  prefersReducedMotion
+                    ? false
+                    : { opacity: 0, y: 40 }
+                }
+                whileInView={
+                  prefersReducedMotion
+                    ? undefined
+                    : { opacity: 1, y: 0 }
+                }
+                viewport={{
+                  once: true,
+                  margin: '-12% 0px -12% 0px',
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="
+                  order-2
+                  lg:order-1
+                "
               >
                 <h2
                   className="
@@ -692,6 +736,7 @@ function ServiceItem({ service }: { service: Service }) {
 
               {/* =========================
                   RIGHT — NUMBER + VIDEO
+                  DESKTOP
               ========================= */}
 
               <motion.div
@@ -715,23 +760,23 @@ function ServiceItem({ service }: { service: Service }) {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
-                  order-1
+                  order-3
                   w-full
                   lg:order-2
                 "
               >
-                {/* NUMBER */}
+                {/* NUMBER — DESKTOP */}
 
                 <p
                   className="
+                    hidden
+                    text-right
                     font-serif
-                    text-[64px]
+                    text-[100px]
                     leading-[0.85]
                     tracking-[-0.04em]
                     text-black
-                    sm:text-[80px]
-                    md:text-[96px]
-                    lg:text-[100px]
+                    lg:block
                     xl:text-[115px]
                   "
                 >
@@ -849,3 +894,4 @@ function CapabilityList({
     </ul>
   )
 }
+
