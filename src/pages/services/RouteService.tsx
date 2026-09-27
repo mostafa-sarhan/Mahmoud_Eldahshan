@@ -10,19 +10,18 @@ import image6 from '@/assets/services/6.jpeg'
 import image7 from '@/assets/services/7.jpeg'
 import image8 from '@/assets/services/8.jpeg'
 import image9 from '@/assets/services/9.jpeg'
-import image10 from '@/assets/services/10.jpeg'
 
 const sectors = [
-  { title: 'AI & Tech', image: image1 },
-  { title: 'Robotics', image: image2 },
-  { title: 'Software & Tools', image: image3 },
-  { title: 'Consumer Tech', image: image4 },
-  { title: 'Electronics', image: image5 },
-  { title: 'Financial Services', image: image6 },
-  { title: 'Wearables', image: image7 },
-  { title: 'Software', image: image8 },
-  { title: 'Aerospace', image: image9 },
-  { title: 'Gaming', image: image10 },
+  { title: 'Fashion', image: image1 },
+  { title: 'Construction & Contracting', image: image2 },
+  { title: ' Real Estate', image: image3 },
+  { title: 'E-commerce', image: image4 },
+  { title: 'Food', image: image5 },
+  { title: ' Education', image: image6 },
+  { title: 'Skincare', image: image7 },
+  { title: 'Sports Clubs', image: image8 },
+  { title: 'Tourism', image: image9 },
+
 ]
 
 export default function RouteService() {
