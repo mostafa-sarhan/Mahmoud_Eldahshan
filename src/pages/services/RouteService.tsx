@@ -44,7 +44,7 @@ export default function RouteService() {
         lg:py-36
       "
     >
-      <div className=" py-8 sm:py-6 md:py-8 lg:py-14  sm:px-6 md:px-10 lg:px-16">
+      <div className=" py-8 sm:py-6 md:py-8 lg:py-14">
         <p className="mb-10 font-sans text-xl font-medium uppercase md:text-2xl">
           (Sectors of Focus)
         </p>
