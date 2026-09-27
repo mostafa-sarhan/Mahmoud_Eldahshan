@@ -329,17 +329,17 @@ function Intro() {
         className="
           mt-4
           max-w-[1200px]
-          font-serif
-          text-[32px]
-          leading-[0.95]
-          tracking-[-0.045em]
+          font-sans
+          text-[24px]
+          leading-[1.25]
+
           sm:mt-10
-          sm:text-[42px]
+          sm:text-[32px]
           md:mt-4
-          md:text-[52px]
+          md:text-[42px]
           lg:mt-4
-          lg:text-[72px]
-          xl:text-[80px]
+          lg:text-[62px]
+          xl:text-[70px]
         "
       >
           Every project starts with the same question:
