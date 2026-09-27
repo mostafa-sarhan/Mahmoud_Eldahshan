@@ -318,25 +318,8 @@ function Intro() {
 
   return (
     <>
-      <motion.p
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
-        whileInView={
-          prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
-        }
-        viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
-        transition={{ duration: 0.5, ease: EASE }}
-        className="
-          font-sans
-          text-xl
-          font-medium
-          uppercase
-          md:text-2xl
-        "
-      >
-        (Selected Work)
-      </motion.p>
 
-      <motion.h1
+      <motion.h2
         initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
         whileInView={
           prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
@@ -344,46 +327,22 @@ function Intro() {
         viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
         transition={{ duration: 0.7, ease: EASE }}
         className="
-          mt-8
+          mt-4
           max-w-[1200px]
           font-sans
-          text-[40px]
+          text-[32px]
           leading-[0.9]
-          sm:text-[50px]
+          sm:text-[42px]
           sm:mt-10
-          md:text-[62px]
+          md:text-[52px]
           md:mt-12
-          lg:text-[82px]
-          xl:text-[100px]
+          lg:text-[72px]
+          xl:text-[80px]
         "
       >
-        Brands built with clarity,
-        <br />
-        character, and intention.
-      </motion.h1>
-
-      <motion.p
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
-        whileInView={
-          prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
-        }
-        viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
-        transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
-        className="
-          mt-8
-          max-w-[560px]
-          font-sans
-          text-lg
-          leading-[1.4]
-          tracking-[-0.02em]
-          text-black/50
-          sm:text-xl
-          md:text-2xl
-        "
-      >
-        A selection of identities, systems, and brand experiences built to give
-        businesses a clearer position and a stronger presence.
-      </motion.p>
+          Every project starts with the same question:
+           what does this brand actually need? Here's how that question turned into work.
+      </motion.h2>
     </>
   )
 }
