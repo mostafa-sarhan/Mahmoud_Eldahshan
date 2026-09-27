@@ -542,7 +542,7 @@ export default function Services() {
 <section
   className="
     w-full
-    border-y
+    border-t
     border-black/15
     px-5
     py-16
@@ -554,87 +554,52 @@ export default function Services() {
     lg:py-36
   "
 >
-  <div
-    className="
-      mx-auto
-      grid
-      max-w-[1500px]
-      grid-cols-1
-      gap-10
-      lg:grid-cols-[0.7fr_1.3fr]
-      lg:gap-20
-    "
-  >
-    {/* LABEL */}
-
-    <div>
-      <p
-        className="
-          font-sans
-          text-xl
-          font-medium
-          uppercase
-          tracking-[-0.02em]
-          md:text-2xl
-        "
-      >
-        (Next Step)
-      </p>
-    </div>
-
-    {/* CONTENT */}
-
-    <div className="max-w-[950px]">
-      <h2
-        className="
-          font-serif
-          text-[42px]
-          leading-[0.92]
-          tracking-[-0.045em]
-          sm:text-[54px]
-          md:text-[72px]
-          lg:text-[88px]
-          xl:text-[105px]
-        "
-      >
-        Not every brand
-        <br />
-        needs the same thing.
-      </h2>
+  <div className="mx-auto max-w-[1500px]">
+    <div className="max-w-[1250px]">
+      {/* DESCRIPTION */}
 
       <p
         className="
-          mt-8
-          max-w-[850px]
+          max-w-[1050px]
           font-sans
           text-lg
           leading-[1.4]
           tracking-[-0.02em]
           text-black/55
-          sm:mt-10
           sm:text-xl
           md:text-2xl
+          lg:text-[28px]
+          lg:leading-[1.3]
         "
       >
-        Some need direction, others need a stronger visual system,
-        others need both. The first step is understanding which.
+        Not every brand needs the same thing. Some need direction, others
+        need a stronger visual system, others need both. The first step is
+        understanding which.
       </p>
 
-      <p
+      {/* QUESTION */}
+
+      <h2
         className="
-          mt-8
-          font-sans
-          text-xl
-          font-medium
-          leading-[1.2]
-          tracking-[-0.02em]
-          sm:mt-10
-          sm:text-2xl
-          md:text-3xl
+          mt-12
+          max-w-[1200px]
+          font-serif
+          text-[42px]
+          leading-[0.95]
+          tracking-[-0.045em]
+          sm:mt-14
+          sm:text-[54px]
+          md:mt-16
+          md:text-[70px]
+          lg:mt-20
+          lg:text-[88px]
+          xl:text-[105px]
         "
       >
         Ready to find out what your brand needs?
-      </p>
+      </h2>
+
+      {/* CTA */}
 
       <NavLink
         to="/contact"
@@ -657,6 +622,7 @@ export default function Services() {
           hover:gap-5
           sm:mt-12
           sm:text-xl
+          md:mt-14
           md:text-2xl
         "
       >
