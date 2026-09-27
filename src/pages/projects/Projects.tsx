@@ -90,8 +90,6 @@ export default function Projects() {
       <section
         className="
           w-full
-          border-b
-          border-black/15
           px-5
           py-6
           sm:px-6
@@ -332,7 +330,6 @@ function Intro() {
           font-sans
           text-[24px]
           leading-[1.25]
-
           sm:mt-10
           sm:text-[32px]
           md:mt-4
