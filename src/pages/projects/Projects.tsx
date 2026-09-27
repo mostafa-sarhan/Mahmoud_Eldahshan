@@ -329,19 +329,23 @@ function Intro() {
         className="
           mt-4
           max-w-[1200px]
-          font-sans
+          font-serif
           text-[32px]
-          leading-[0.9]
-          sm:text-[42px]
+          leading-[0.95]
+          tracking-[-0.045em]
           sm:mt-10
+          sm:text-[42px]
+          md:mt-4
           md:text-[52px]
-          md:mt-12
+          lg:mt-4
           lg:text-[72px]
           xl:text-[80px]
         "
       >
           Every project starts with the same question:
-           what does this brand actually need? Here's how that question turned into work.
+           what does this brand actually need?
+           <br/>
+            Here's how that question turned into work.
       </motion.h2>
     </>
   )
