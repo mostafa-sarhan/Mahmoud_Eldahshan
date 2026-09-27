@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {
   motion,
   useReducedMotion,
