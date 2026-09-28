@@ -125,13 +125,13 @@ export default function Services() {
           border-b
           border-black/15
           px-5
-          py-6
-          sm:px-6
-          sm:py-8
+          py-2
+          sm:px-2
+          sm:py-6
           md:px-10
-          md:py-14
+          md:py-8
           lg:px-16
-          lg:py-18
+          lg:py-8
         "
       >
         <div className="mx-auto max-w-[1500px]">
