@@ -122,8 +122,6 @@ export default function Services() {
       <section
         className="
           w-full
-          border-b
-          border-black/15
           px-5
           py-2
           sm:px-2
