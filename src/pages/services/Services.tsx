@@ -139,12 +139,12 @@ export default function Services() {
             className="
               max-w-[1200px]
               font-sans
-              text-[40px]
+              text-[30px]
               leading-[0.9]
-              sm:text-[50px]
-              md:text-[62px]
-              lg:text-[82px]
-              xl:text-[100px]
+              sm:text-[42px]
+              md:text-[52px]
+              lg:text-[65px]
+              xl:text-[75px]
             "
           >
             Good branding is not decoration.
