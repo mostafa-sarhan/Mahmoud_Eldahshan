@@ -340,7 +340,7 @@ function Intro() {
            <br/>
             Here's how that question turned into work.
       </motion.h2>
-      <motion.p className='mb-10 font-sans text-xl py-8 font-medium uppercase md:text-2xl'>
+      <motion.p className='mb-10 font-sans text-xl py-12 font-medium uppercase md:text-2xl'>
         (Projects)
       </motion.p>
     </>
