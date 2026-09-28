@@ -290,8 +290,13 @@ function ProjectCard({
     flex
     items-baseline
     justify-between
-    pt-5
+    gap-4
+    pt-6
+    pb-8
+    sm:pt-6
+    sm:pb-10
     md:pt-6
+    md:pb-12
   "
 >
   <h3
