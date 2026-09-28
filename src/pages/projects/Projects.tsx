@@ -153,8 +153,7 @@ function Intro() {
 
       <motion.p
         className="
-          mb-10
-          py-12
+          pt-18
           font-sans
           text-xl
           font-medium
@@ -176,11 +175,14 @@ function ProjectGrid() {
   return (
     <section
       className="
-        mt-8
         w-full
-        sm:mt-10
+        px-4
+        sm:px-5
+        md:px-6
         md:mt-12
         lg:mt-16
+        lg:px-8
+        xl:px-10
       "
     >
       <div
@@ -188,12 +190,12 @@ function ProjectGrid() {
           grid
           w-full
           grid-cols-1
-          gap-y-12
-          md:gap-y-16
-          lg:grid-cols-2
-          lg:gap-x-12
-          lg:gap-y-20
-
+          gap-4
+          sm:gap-5
+          md:grid-cols-2
+          md:gap-6
+          lg:gap-8
+          xl:gap-10
         "
       >
         {projects.map((project, index) => (
@@ -296,7 +298,8 @@ function ProjectCard({
         <div
           className="
             flex
-            flex-col
+            justify-between
+
             items-start
             font-sans
             font-medium
@@ -330,22 +333,6 @@ function ProjectCard({
           </p>
         </div>
 
-        {/* CATEGORY */}
-
-        <span
-          className="
-            hidden
-            font-sans
-            text-sm
-            font-medium
-            uppercase
-            text-black
-            md:block
-            pr-2
-          "
-        >
-          ({project.category})
-        </span>
       </div>
     </motion.article>
   )
