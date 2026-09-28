@@ -285,55 +285,43 @@ function ProjectCard({
 
       {/* PROJECT INFO */}
 
-      <div
-        className="
-          flex
-          justify-between
-          pt-5
-          md:pt-6
-        "
-      >
-        {/* TITLE + DESCRIPTION */}
+<div
+  className="
+    flex
+    items-baseline
+    justify-between
+    pt-5
+    md:pt-6
+  "
+>
+  <h3
+    className="
+      font-sans
+      text-xl
+      font-medium
+      leading-none
+      tracking-tight
+      text-black
+      md:text-2xl
+    "
+  >
+    {project.title}
+  </h3>
 
-        <div
-          className="
-            flex
-            justify-between
-
-            items-start
-            font-sans
-            font-medium
-            p-2
-          "
-        >
-          <h3
-            className="
-              text-xl
-              leading-none
-              tracking-tight
-              text-black
-              md:text-2xl
-              
-            "
-          >
-            {project.title}
-          </h3>
-
-          <p
-            className="
-              mt-1
-              text-base
-              leading-tight
-              tracking-tight
-              text-black/60
-              md:text-lg
-            "
-          >
-            {project.description}
-          </p>
-        </div>
-
-      </div>
+  <p
+    className="
+      font-sans
+      text-base
+      font-medium
+      leading-none
+      tracking-tight
+      text-black/60
+      md:text-lg
+    "
+  >
+    {project.description}
+  </p>
+</div>
     </motion.article>
   )
 }
