@@ -1,75 +1,12 @@
+import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'motion/react'
 
 import PageMarqueeTwo from '@/components/PageMarquee/PageMarqueeTwo'
 
-import video1 from '@/assets/projects/video1.mp4'
-import video2 from '@/assets/projects/video2.mp4'
-import video3 from '@/assets/projects/video3.mp4'
-import video4 from '@/assets/projects/video4.mp4'
-import video5 from '@/assets/projects/video5.mp4'
-import video6 from '@/assets/projects/video6.mp4'
-import video7 from '@/assets/projects/video7.mp4'
-import video8 from '@/assets/projects/video8.mp4'
+import { projectPath } from '@/constants/routes'
+import { projects, type Project } from '@/data/projects'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
-
-interface Project {
-  title: string
-  description: string
-  category: string
-  video: string
-}
-
-const projects: Project[] = [
-  {
-    title: 'Project One',
-    description: 'Brand strategy & identity',
-    category: 'Branding',
-    video: video1,
-  },
-  {
-    title: 'Project Two',
-    description: 'Digital experience',
-    category: 'Digital',
-    video: video2,
-  },
-  {
-    title: 'Project Three',
-    description: 'Visual identity',
-    category: 'Identity',
-    video: video3,
-  },
-  {
-    title: 'Project Four',
-    description: 'Brand evolution',
-    category: 'Strategy',
-    video: video4,
-  },
-  {
-    title: 'Project Five',
-    description: 'Creative direction',
-    category: 'Art Direction',
-    video: video5,
-  },
-  {
-    title: 'Project Six',
-    description: 'Packaging & identity',
-    category: 'Packaging',
-    video: video6,
-  },
-  {
-    title: 'Project Seven',
-    description: 'Brand experience',
-    category: 'Experience',
-    video: video7,
-  },
-  {
-    title: 'Project Eight',
-    description: 'Visual system',
-    category: 'Design',
-    video: video8,
-  },
-]
 
 export default function Projects() {
   return (
@@ -145,8 +82,7 @@ function Intro() {
           xl:text-[65px]
         "
       >
-        Every project starts with the same question:
-        what does this brand actually need?
+        Every project starts with the same question: what does this brand actually need?
         <br />
         Here's how that question turned into work.
       </motion.h2>
@@ -199,11 +135,7 @@ function ProjectGrid() {
         "
       >
         {projects.map((project, index) => (
-          <ProjectCard
-            key={project.video}
-            project={project}
-            index={index}
-          />
+          <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>
     </section>
@@ -219,74 +151,84 @@ interface ProjectCardProps {
   index: number
 }
 
-function ProjectCard({
-  project,
-  index,
-}: ProjectCardProps) {
+function ProjectCard({ project, index }: ProjectCardProps) {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <motion.article
-      initial={
-        prefersReducedMotion
-          ? false
-          : {
-              opacity: 0,
-              y: 40,
-            }
-      }
-      whileInView={
-        prefersReducedMotion
-          ? undefined
-          : {
-              opacity: 1,
-              y: 0,
-            }
-      }
-      viewport={{
-        once: true,
-        margin: '-10% 0px -10% 0px',
-      }}
-      transition={{
-        duration: 0.7,
-        delay: (index % 2) * 0.08,
-        ease: EASE,
-      }}
-      className="relative col-span-1"
+    <Link
+      to={projectPath(project.slug)}
+      aria-label={`View ${project.title} case study`}
+      className="
+        col-span-1
+        block
+        focus-visible:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-black
+        focus-visible:ring-offset-4
+        focus-visible:ring-offset-white
+      "
     >
-      {/* VIDEO */}
+      <motion.article
+        initial={
+          prefersReducedMotion
+            ? false
+            : {
+                opacity: 0,
+                y: 40,
+              }
+        }
+        whileInView={
+          prefersReducedMotion
+            ? undefined
+            : {
+                opacity: 1,
+                y: 0,
+              }
+        }
+        viewport={{
+          once: true,
+          margin: '-10% 0px -10% 0px',
+        }}
+        transition={{
+          duration: 0.7,
+          delay: (index % 2) * 0.08,
+          ease: EASE,
+        }}
+        className="relative"
+      >
+        {/* VIDEO */}
 
-      <div
-        className="
+        <div
+          className="
           relative
           w-full
           overflow-hidden
           bg-black
           pt-[100%]
         "
-      >
-        <video
-          src={project.video}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          aria-label={project.title}
-          className="
+        >
+          <video
+            src={project.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-label={project.title}
+            className="
             absolute
             inset-0
             h-full
             w-full
             object-cover
           "
-        />
-      </div>
+          />
+        </div>
 
-      {/* PROJECT INFO */}
+        {/* PROJECT INFO */}
 
-<div
-  className="
+        <div
+          className="
     flex
     items-baseline
     justify-between
@@ -298,9 +240,9 @@ function ProjectCard({
     md:pt-6
     md:pb-12
   "
->
-  <h3
-    className="
+        >
+          <h3
+            className="
       font-sans
       text-xl
       font-medium
@@ -309,12 +251,12 @@ function ProjectCard({
       text-black
       md:text-2xl
     "
-  >
-    {project.title}
-  </h3>
+          >
+            {project.title}
+          </h3>
 
-  <p
-    className="
+          <p
+            className="
       font-sans
       text-base
       font-medium
@@ -323,10 +265,11 @@ function ProjectCard({
       text-black/60
       md:text-lg
     "
-  >
-    {project.description}
-  </p>
-</div>
-    </motion.article>
+          >
+            {project.summary}
+          </p>
+        </div>
+      </motion.article>
+    </Link>
   )
 }
