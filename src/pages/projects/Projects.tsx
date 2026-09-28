@@ -91,13 +91,13 @@ export default function Projects() {
         className="
           w-full
           px-5
-          py-6
+          py-2
           sm:px-6
-          sm:py-8
+          sm:py-4
           md:px-10
-          md:py-14
+          md:py-2
           lg:px-16
-          lg:py-18
+          lg:py-4
         "
       >
         <div className="mx-auto max-w-[1500px]">
@@ -325,18 +325,14 @@ function Intro() {
         viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
         transition={{ duration: 0.7, ease: EASE }}
         className="
-          mt-4
           max-w-[1200px]
           font-sans
-          text-[24px]
+          text-[20px]
           leading-[1.25]
-          sm:mt-10
           sm:text-[32px]
-          md:mt-4
           md:text-[42px]
-          lg:mt-4
-          lg:text-[62px]
-          xl:text-[70px]
+          lg:text-[55px]
+          xl:text-[65px]
         "
       >
           Every project starts with the same question:
@@ -344,6 +340,9 @@ function Intro() {
            <br/>
             Here's how that question turned into work.
       </motion.h2>
+      <motion.p className='mb-10 font-sans text-xl py-8 font-medium uppercase md:text-2xl'>
+        (Projects)
+      </motion.p>
     </>
   )
 }
